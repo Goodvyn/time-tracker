@@ -845,7 +845,7 @@ dialog:has(.ra-dlg){width:min(780px,calc(100vw - 32px))}
 /* =========================================================
    Constants & helpers
    ========================================================= */
-const APP_VERSION = '1.90';
+const APP_VERSION = '1.91';
 // where new versions are published (a public GitHub repository); the tracker checks it now and then
 const UPDATE_URL = 'https://raw.githubusercontent.com/Goodvyn/time-tracker/main/time-tracker.html';
 const UPD_KEY = 'timeTracker.update.v1';
@@ -1289,7 +1289,7 @@ const updRead = () => { try { return JSON.parse(localStorage.getItem(UPD_KEY) ||
 const canUpdate = () => !!window.__ttBoot && /^https:\/\/raw\.githubusercontent\.com\/(?!OWNER\/)/.test(UPDATE_URL);
 async function checkUpdate(manual){
   if (!canUpdate() || upd.checking) return;
-  upd.checking = true; if (manual && ui.view === 'data') render();
+  upd.checking = true; updFoot();
   try {
     const r = await fetch(UPDATE_URL + '?t=' + Date.now(), { cache:'no-store' });
     if (!r.ok) throw new Error(r.status === 404 ? 'not found' : 'HTTP ' + r.status);
@@ -1307,7 +1307,23 @@ async function checkUpdate(manual){
   } catch (err) {
     upd.error = String(err && err.message || err);
     if (manual) toast(`Couldn't check for updates (${esc(upd.error)}).`, { error:true });
-  } finally { upd.checking = false; if (ui.view === 'data') render(); }
+  } finally { upd.checking = false; updFoot(); }
+}
+/* The update part of the Backup page's footnote. Its words only change when the answer does (not while checking,
+   and not with "checked 5 min ago"), so clicking Check for updates doesn't make the centered line shift about;
+   when it was checked, or why it couldn't be, is in the tooltip. */
+function updStatus(){
+  if (upd.ready) return { html:`<button class="linkbtn" data-action="update-reload">Version ${esc(upd.ready)} is ready: reload</button>`, tip:'' };
+  if (upd.error) return { html:`Couldn't check for updates`, tip:upd.error === 'not found' ? 'Nothing has been published at the update address yet' : `The update address couldn't be reached (${upd.error})` };
+  if (upd.last) return { html:'Up to date', tip:`Checked ${fmtRelative(upd.last)}` };
+  return { html:'Not checked yet', tip:'' };
+}
+function updFoot(){
+  const st = document.querySelector('.footnote .upd-st');   // (the button isn't greyed out while checking: it's quick, and it would flicker)
+  if (!st) return;
+  const x = updStatus();
+  if (st.dataset.h !== x.html) { st.innerHTML = x.html; st.dataset.h = x.html; }
+  if ((st.dataset.tip || '') !== x.tip) { if (x.tip) st.dataset.tip = x.tip; else delete st.dataset.tip; }
 }
 function initUpdates(){
   if (!canUpdate()) return;
@@ -1956,7 +1972,7 @@ function renderData(){
       <div><h2>Delete everything</h2><p class="muted">Removes all projects, templates and time entries from this browser. Backup files on your computer are not touched.</p></div>
       <button class="btn danger-outline" data-action="wipe">${icon('trash',14)} Delete all data</button>
     </div></section>
-    <p class="footnote">Version ${APP_VERSION}${canUpdate() ? ` · ${upd.checking ? 'Checking for updates…' : upd.ready ? `<button class="linkbtn" data-action="update-reload">Version ${esc(upd.ready)} is ready: reload</button>` : upd.error ? `Couldn't check for updates` : upd.last ? `Up to date (checked ${fmtRelative(upd.last)})` : 'Updates on'} · <button class="linkbtn" data-action="update-check"${upd.checking ? ' disabled' : ''}>Check for updates</button>` : ''} · ${S.projects.length} projects · ${S.templates.length} templates · ${S.entries.length} time entries · ${sizeKB} KB</p>`;
+    <p class="footnote">Version ${APP_VERSION}${canUpdate() ? (() => { const x = updStatus(); return ` · <span class="upd-st" data-h="${esc(x.html)}"${x.tip ? ` data-tip="${esc(x.tip)}"` : ''}>${x.html}</span> · <button class="linkbtn" data-action="update-check">Check for updates</button>`; })() : ''} · ${S.projects.length} projects · ${S.templates.length} templates · ${S.entries.length} time entries · ${sizeKB} KB</p>`;
 }
 
 /* =========================================================
