@@ -82,12 +82,13 @@ p{margin:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 /* ---------- top bar ---------- */
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;padding:10px 20px;background:var(--surface);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;padding:10px 20px;background:var(--surface);border-bottom:1px solid var(--border);cursor:default}   /* plain arrow over text up here (no text cursor), so only the buttons look clickable */
 .brand{display:flex;align-items:center;gap:8px;font-weight:550;font-size:15px;white-space:nowrap}
 .brand svg{color:var(--accent)}
 .runner{flex:1;display:flex;justify-content:center;min-width:0}
 .runner-pill{display:flex;align-items:center;gap:12px;padding:4px 5px 4px 14px;min-height:42px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);min-width:0;max-width:620px}
 .runner-pill.on{background:var(--run-soft);border-color:transparent}
+.runner-pill.solo{padding-right:14px}   /* the small right padding is for the round button; with only text, both sides match */
 .runner-label{display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;border:0;background:none;padding:0;text-align:left}
 .runner-label:not(.here):hover .t{text-decoration:underline}
 .runner-label.here{cursor:default}   /* already on this project's page: nothing to click */
@@ -845,7 +846,7 @@ dialog:has(.ra-dlg){width:min(780px,calc(100vw - 32px))}
 /* =========================================================
    Constants & helpers
    ========================================================= */
-const APP_VERSION = '1.91';
+const APP_VERSION = '1.93';
 // where new versions are published (a public GitHub repository); the tracker checks it now and then
 const UPDATE_URL = 'https://raw.githubusercontent.com/Goodvyn/time-tracker/main/time-tracker.html';
 const UPD_KEY = 'timeTracker.update.v1';
@@ -1274,7 +1275,7 @@ function renderRunner(){
       const p = proj(last.projectId), t = taskOf(p, last.taskId);
       resume = `<button class="btn sm ghost" data-action="toggle" data-pid="${p.id}" data-tid="${last.taskId || ''}">${icon('play',12)} Resume <b>${esc(t ? t.name : p.name)}</b></button>`;
     }
-    el.innerHTML = `<div class="runner-pill"><span class="muted">No timer running</span>${resume}</div>`;
+    el.innerHTML = `<div class="runner-pill${resume ? '' : ' solo'}"><span class="muted">No timer running</span>${resume}</div>`;
   }
 }
 
