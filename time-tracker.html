@@ -9,41 +9,41 @@
 <link id="favicon" rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f6fed' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='13' r='8'/%3E%3Cpath d='M12 9v4l2.5 2M9.5 2.5h5'/%3E%3C/svg%3E">
 <style>
 :root{
-  --bg:#f5f6f8; --surface:#ffffff; --surface-2:#f0f2f5; --border:#e3e6eb; --border-strong:#cdd2da;
+  --bg:#f5f6f8; --surface:#ffffff; --surface-2:#f0f2f5; --border:#e3e6eb; --border-strong:#cdd2da; --seg:#e4e7ec;
   --text:#16191d; --muted:#666e7a; --faint:#9aa1ab;
   --accent:#2f6fed; --accent-hover:#2560d8; --accent-soft:#e9f0fe; --on-accent:#ffffff;
-  --run:#12924a; --run-solid:#16a34a; --run-soft:#e6f6ec;
+  --run:#12924a; --run-solid:#16a34a; --run-soft:#e6f6ec; --run-text:#0c6a35;
   --danger:#d43d35; --danger-soft:#fdeceb;
-  --warn-soft:#fff5dc; --warn-text:#7a5500;
+  --warn-soft:#fff5dc; --warn-text:#7a5500; --alert:#ea8a0c; --alert-soft:#fff0dd; --alert-text:#9a4a00;
   --shadow:0 1px 2px rgba(16,24,40,.05),0 1px 3px rgba(16,24,40,.07);
   --pop:0 10px 30px rgba(16,24,40,.16);
   --radius:12px;
-  --sb:rgba(0,0,0,.22); --sb-hover:rgba(0,0,0,.42);
+  --sb:rgba(0,0,0,.22); --sb-hover:rgba(0,0,0,.42); --ovs:#c3c7cd; --ovs-hover:#969ca5;
   color-scheme:light;
 }
 /* Dark colours: used when Windows is in dark mode, unless Light was picked in the app; or when Dark was picked */
 @media (prefers-color-scheme: dark){
   :root:not([data-theme=light]){
-    --bg:#0e1115; --surface:#161a20; --surface-2:#1e232b; --border:#2a3039; --border-strong:#3a414c;
+    --bg:#0e1115; --surface:#161a20; --surface-2:#1e232b; --border:#2a3039; --border-strong:#3a414c; --seg:#1e232b;
     --text:#e8ebef; --muted:#9ba4af; --faint:#6b7480;
     --accent:#6b98ff; --accent-hover:#89adff; --accent-soft:#1b2640; --on-accent:#0a1020;
-    --run:#3ccf78; --run-solid:#22a75a; --run-soft:#12281b;
+    --run:#3ccf78; --run-solid:#22a75a; --run-soft:#12281b; --run-text:#3ccf78;
     --danger:#f06a62; --danger-soft:#3a1a19;
-    --warn-soft:#2f2711; --warn-text:#f1c96a;
+    --warn-soft:#2f2711; --warn-text:#f1c96a; --alert:#f39a2b; --alert-soft:#33230f; --alert-text:#f6b25e;
     --shadow:none; --pop:0 10px 30px rgba(0,0,0,.5);
-    --sb:rgba(255,255,255,.2); --sb-hover:rgba(255,255,255,.4);
+    --sb:rgba(255,255,255,.2); --sb-hover:rgba(255,255,255,.4); --ovs:#454b54; --ovs-hover:#6f7782;
     color-scheme:dark;
   }
 }
 :root[data-theme=dark]{
-    --bg:#0e1115; --surface:#161a20; --surface-2:#1e232b; --border:#2a3039; --border-strong:#3a414c;
+    --bg:#0e1115; --surface:#161a20; --surface-2:#1e232b; --border:#2a3039; --border-strong:#3a414c; --seg:#1e232b;
     --text:#e8ebef; --muted:#9ba4af; --faint:#6b7480;
     --accent:#6b98ff; --accent-hover:#89adff; --accent-soft:#1b2640; --on-accent:#0a1020;
-    --run:#3ccf78; --run-solid:#22a75a; --run-soft:#12281b;
+    --run:#3ccf78; --run-solid:#22a75a; --run-soft:#12281b; --run-text:#3ccf78;
     --danger:#f06a62; --danger-soft:#3a1a19;
-    --warn-soft:#2f2711; --warn-text:#f1c96a;
+    --warn-soft:#2f2711; --warn-text:#f1c96a; --alert:#f39a2b; --alert-soft:#33230f; --alert-text:#f6b25e;
     --shadow:none; --pop:0 10px 30px rgba(0,0,0,.5);
-    --sb:rgba(255,255,255,.2); --sb-hover:rgba(255,255,255,.4);
+    --sb:rgba(255,255,255,.2); --sb-hover:rgba(255,255,255,.4); --ovs:#454b54; --ovs-hover:#6f7782;
     color-scheme:dark;
 }
 :root{--ico-check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E");--ico-chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666e7a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");--ico-chev-up:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666e7a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 15 6-6 6 6'/%3E%3C/svg%3E");--ico-cal-hot:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f6fed' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='5' width='17' height='15' rx='2'/%3E%3Cpath d='M3.5 10h17M8 3v4M16 3v4'/%3E%3C/svg%3E");--ico-clock-hot:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f6fed' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8.5'/%3E%3Cpath d='M12 7.5V12l3 2'/%3E%3C/svg%3E");--ico-clock:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666e7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8.5'/%3E%3Cpath d='M12 7.5V12l3 2'/%3E%3C/svg%3E");--ico-cal:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666e7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='5' width='17' height='15' rx='2'/%3E%3Cpath d='M3.5 10h17M8 3v4M16 3v4'/%3E%3C/svg%3E")}
@@ -59,21 +59,28 @@
 ::-webkit-scrollbar-thumb:hover,::-webkit-scrollbar-thumb:active{background:var(--sb-hover)}
 /* The app's own scroll areas hide the pill until you hover them, then fade it in. Chrome doesn't repaint a scrollbar
    when its box is hovered, so the pill is drawn with a border that copies the box's border-color, which can fade. */
-.mainwrap,#sidebar > .plist,.tscroll,.log-body,.slist,.chart,.m-list{border-color:transparent;transition:border-color .2s}
-.mainwrap:hover,#sidebar > .plist:hover,.tscroll:hover,.log-body:hover,.slist:hover,.chart:hover,.m-list:hover{border-color:var(--sb)}
-:is(.mainwrap,#sidebar > .plist,.tscroll,.log-body,.slist,.chart,.m-list)::-webkit-scrollbar-thumb{background:none;border:0 solid;border-right-width:calc(100vw + 100vh);border-color:inherit}
-:is(.mainwrap,#sidebar > .plist,.tscroll,.log-body,.slist,.chart,.m-list)::-webkit-scrollbar-thumb:hover,
-:is(.mainwrap,#sidebar > .plist,.tscroll,.log-body,.slist,.chart,.m-list)::-webkit-scrollbar-thumb:active{border-color:var(--sb-hover)}
+.mainwrap,#sidebar > .plist,.m-list{border-color:transparent;transition:border-color .2s}
+.mainwrap:hover,#sidebar > .plist:hover,.m-list:hover{border-color:var(--sb)}
+:is(.mainwrap,#sidebar > .plist,.m-list)::-webkit-scrollbar-thumb{background:none;border:0 solid;border-right-width:calc(100vw + 100vh);border-color:inherit}
+:is(.mainwrap,#sidebar > .plist,.m-list)::-webkit-scrollbar-thumb:hover,
+:is(.mainwrap,#sidebar > .plist,.m-list)::-webkit-scrollbar-thumb:active{border-color:var(--sb-hover)}
+/* Lists inside cards (tasks, time log, summary) draw their own thin scrollbar over the rows, so no strip is kept for one */
+.tscroll,.log-body,.slist,.chart{scrollbar-width:none}
+:is(.tscroll,.log-body,.slist,.chart)::-webkit-scrollbar{display:none}
+.ovs{position:absolute;z-index:6;width:6px;border-radius:3px;background:var(--ovs);opacity:0;pointer-events:none;transition:opacity .2s,background-color .15s}
+.ovs.on{opacity:1;pointer-events:auto}
+.ovs.none{display:none}
+.ovs:hover,.ovs.drag{background:var(--ovs-hover)}
 html,body{margin:0}
 @supports not selector(::-webkit-scrollbar){
   *{scrollbar-width:thin;scrollbar-color:var(--sb) transparent}
-  :is(.mainwrap,#sidebar > .plist,.tscroll,.log-body,.slist,.chart,.m-list){scrollbar-color:transparent transparent;transition:scrollbar-color .2s}
-  :is(.mainwrap,#sidebar > .plist,.tscroll,.log-body,.slist,.chart,.m-list):hover{scrollbar-color:var(--sb) transparent}
+  :is(.mainwrap,#sidebar > .plist,.m-list){scrollbar-color:transparent transparent;transition:scrollbar-color .2s}
+  :is(.mainwrap,#sidebar > .plist,.m-list):hover{scrollbar-color:var(--sb) transparent}
 }
 /* Always reserve room for the scrollbar so the page doesn't shift between tabs */
 html{scrollbar-gutter:stable}
 @supports not (scrollbar-gutter:stable){html{overflow-y:scroll}}
-body{background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh;display:flex;flex-direction:column}
+body{-webkit-user-select:none;user-select:none;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;min-height:100vh;display:flex;flex-direction:column}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 h1,h2,h3{margin:0;font-weight:550;letter-spacing:-.01em}
@@ -118,7 +125,7 @@ p{margin:0}
 .tabs button.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
 .tabs button:hover:not(.active){color:var(--text)}
 .tabs button{position:relative}
-.tabs button.attn::after{content:'';position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--warn-text)}
+.tabs button.attn::after{content:'';position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--alert)}
 
 /* ---------- banner ---------- */
 .banner{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;padding:9px 20px;font-size:13px;border-bottom:1px solid var(--border)}
@@ -190,6 +197,8 @@ p{margin:0}
 /* sidebar */
 .side-head{display:flex;align-items:center;justify-content:space-between;padding:0 4px 8px 8px;color:var(--muted);font-size:12px;font-weight:550;text-transform:uppercase;letter-spacing:.05em}
 .plist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+/* text you can select: names, the data file's location, the version and the summary total (everything else is part of the controls) */
+input,textarea,[contenteditable=""],[contenteditable="true"],.pt-name,.tname,.sname .n,.tpl-head h3,.tpl li:not(.more-tasks),.path-box .path,.footnote .ver,.tb-val .num{-webkit-user-select:text;user-select:text}
 .pitem{display:flex;align-items:center;gap:8px;padding:8px 10px 8px 2px;border-radius:8px;cursor:pointer;user-select:none}
 .pitem .grip{margin-right:-2px}
 .pitem:hover{background:var(--surface-2)}
@@ -216,15 +225,16 @@ p{margin:0}
 .pactions{display:flex;gap:8px;align-items:center}
 .pactions > .btn, .pactions > details > summary.btn{height:34px;padding-top:0;padding-bottom:0}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;box-shadow:var(--shadow)}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
 .stat .k{font-size:12px;color:var(--muted);font-weight:550}
-.stat .v{font-size:22px;font-weight:550;margin-top:2px}
+.stat .v{font-size:22px;font-weight:550;margin-top:9px}
 
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:20px}
-.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;min-height:52px}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px}
 .card-body{padding:4px 16px 16px}
 .card-body p + p{margin-top:8px}
 .toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);cursor:pointer}
+.card-head > .toggle{margin-block:-8px}   /* (no taller than the title, so the header doesn't grow when it shows up) */
 
 .trow{display:grid;grid-template-columns:12px 34px 18px minmax(0,1fr) 86px 86px 30px;gap:12px;align-items:center;padding:7px 12px 7px 6px;border-top:1px solid var(--border)}
 
@@ -262,7 +272,7 @@ body.is-dragging,body.is-dragging *{cursor:ns-resize !important;user-select:none
 .chk:hover:not(:checked){border-color:var(--text)}
 .chk:checked{background-color:var(--accent);border-color:var(--accent);background-image:var(--ico-check)}
 .chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.addtask{display:flex;gap:8px;padding:12px 16px 14px;border-top:1px solid var(--border)}
+.addtask{display:flex;gap:8px;padding:16px;border-top:1px solid var(--border)}
 
 .input{width:100%;border:1px solid var(--border-strong);background:var(--surface);border-radius:8px;padding:8px 10px;min-width:0}
 .input:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:transparent}
@@ -368,7 +378,7 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
   .pcol-log{position:sticky;top:16px}
   .log-card{display:flex;flex-direction:column;max-height:calc(100vh - var(--log-top, 105px) - 25px);margin-bottom:0}
   .log-card .card-head{flex:none;border-bottom:1px solid var(--border)}
-  .log-body{overflow-y:auto;scrollbar-gutter:stable;min-height:0;border-radius:0 0 var(--radius) var(--radius)}
+  .log-body{overflow-y:auto;min-height:0;border-radius:0 0 var(--radius) var(--radius)}
   .log-body > .day:first-child,.log-body > .empty.sm{border-top:0}
   .log-body .dayhead{position:sticky;top:0;z-index:2}
   /* left column fits the window too; the task rows scroll inside the card */
@@ -376,8 +386,15 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
   .pcol-main > .phead, .pcol-main > .stats{flex:none}
   .tasks-card{display:flex;flex-direction:column;min-height:0;flex:0 1 auto;margin-bottom:0}
   .tasks-card > .card-head, .tasks-card > .addtask{flex:none}
-  .tscroll{overflow-y:auto;min-height:100px;flex:0 1 auto;scrollbar-gutter:stable;overscroll-behavior:contain}
+  .tscroll{overflow-y:auto;min-height:100px;flex:0 1 auto;overscroll-behavior:contain}
   .tscroll > .trow.head{position:sticky;top:0;z-index:3;background:var(--surface)}
+  /* these lists run to the card's edge with their scrollbar drawn over them, so their right side keeps 8px more room
+     (everything sits where it did when a strip was kept for the scrollbar) */
+  .log-body .erow{padding-right:16px}
+  .log-body .dayhead{padding-right:24px}
+  .log-body .sel-del{right:16px}
+  .tscroll .trow{padding-right:20px}
+  .tscroll .swipe-del{padding-right:32px}
 }
 .erow .eact{display:flex;justify-content:flex-end;opacity:.55}
 .erow:hover .eact,.erow:focus-within .eact{opacity:1}
@@ -399,11 +416,11 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
 
 /* templates */
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
-.tpl{display:flex;flex-direction:column;padding:16px;margin:0}
+.tpl{display:flex;flex-direction:column;padding:16px 16px 15px;margin:0}
 .tpl-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .tpl-head h3{overflow-wrap:anywhere}
 .tpl-head span{font-size:12px;white-space:nowrap}
-.tpl ol{margin:10px 0 14px;padding-left:20px;color:var(--muted);flex:1}
+.tpl ol{margin:12px 0 14px;padding-left:20px;color:var(--muted);flex:1}
 .tpl li{margin:2px 0;overflow-wrap:anywhere}
 .tpl .more-tasks{list-style:none;margin-left:-20px;font-size:13px;color:var(--faint)}
 .tpl .more-tasks .link-inline{font-size:13px;padding:2px 0}
@@ -411,7 +428,7 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
 .tpl-actions .spacer{flex:1}
 
 /* summary */
-.seg{display:inline-flex;flex-wrap:wrap;gap:2px;background:var(--surface-2);padding:3px;border-radius:10px;margin-bottom:14px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:2px;background:var(--seg);padding:3px;border-radius:10px;margin-bottom:14px}
 .seg button{border:0;background:none;padding:5px 11px;border-radius:7px;color:var(--muted);font-weight:550;font-size:13px}
 .seg button.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
 .seg .ls{display:none}
@@ -425,7 +442,7 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
 .tb-val{cursor:pointer}
 .tb-val .fmt-dec,.tb-val.dec .fmt-hm{display:none}
 .tb-val.dec .fmt-dec{display:inline}
-#main.sum-view{--sum-head-h:64px}
+#main.sum-view{--sum-head-h:55px}
 .sum-days > .card-head{height:var(--sum-head-h);min-height:0;padding-top:0;padding-bottom:0}
 .sum-top{display:flex;align-items:center;gap:4px;margin-bottom:10px;min-height:32px}
 .sum-range{font-size:15px;font-weight:500;color:var(--text)}
@@ -480,12 +497,18 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
 .srow.sub .bar > i{opacity:.55;transition:opacity .15s,background-color .15s}
 .sum-total .srow.sub.lit .bar{background:var(--border)}
 .sum-total .srow.sub.lit .bar > i{opacity:1;background:color-mix(in srgb, var(--c), #fff 35%);background:oklch(from var(--c) calc(l + .17) c h)}
+/* text measured by its capital letters (cap height to baseline): the padding around it is the space you see */
+.card-head h2,.tpl-head h3,.tpl-head span,dialog h2,.set-row .card-head p,.danger-row .card-head p,.stat .k,.stat .v,.total-big .k,.total-big .v{text-box:trim-both cap alphabetic}
+#toast .toast > span,#toast .toast > button{text-box:trim-both cap alphabetic}
+@supports not (text-box:trim-both cap alphabetic){
+  .card-head h2,.tpl-head h3,.tpl-head span,dialog h2,.set-row .card-head p,.danger-row .card-head p,.stat .k,.stat .v,.total-big .k,.total-big .v{margin-top:-.42em;margin-bottom:-.36em}
+}
 .card-head .ch-btns{display:flex;gap:6px;align-items:center}
 .ch-title{display:flex;align-items:center;gap:4px;min-width:0}
 .info{position:relative;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;color:var(--faint);cursor:help;outline:none;transition:color .12s}
 .info:hover,.info:focus-visible{color:var(--muted)}
 .info:focus-visible{box-shadow:0 0 0 2px var(--accent)}
-.info-pop{position:absolute;left:-6px;top:calc(100% + 6px);z-index:40;width:max-content;max-width:min(380px,calc(100vw - 130px));background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--pop);
+.info-pop{position:absolute;left:-6px;top:calc(100% + 6px);z-index:40;width:max-content;max-width:min(460px,calc(100vw - 130px));background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--pop);
   padding:10px 12px;font-size:13px;line-height:1.45;color:var(--text);font-weight:450;cursor:default;
   opacity:0;visibility:hidden;transform:translateY(-3px);pointer-events:none;transition:opacity .1s,transform .1s,visibility 0s .1s}
 .info:is(:hover,:focus-visible) .info-pop{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition:opacity .1s,transform .1s}
@@ -494,6 +517,8 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
 .info-pop ol{margin:0;padding-left:18px}
 .info-pop li + li{margin-top:2px}
 .info-pop .ip-n{display:block;margin-top:6px;color:var(--muted)}
+.info-pop .ip-p{display:block}
+.info-pop .ip-p + .ip-p{margin-top:4px}
 .total-big .fold{margin-left:auto;align-self:center}
 .chart.hl .tseg,.chart.hl .tblk{opacity:.25}
 .chart.hl .on{opacity:1}
@@ -519,7 +544,9 @@ body.log-selecting,body.log-selecting *{user-select:none !important}
 :is(#tip,.ra-tip).on{opacity:1;transform:none}
 /* every title="" in the app shows as this small dark tooltip instead of the browser's (same look as the charts') */
 .gtip{position:fixed;inset:auto;margin:0;z-index:70;pointer-events:none;max-width:280px;width:max-content;background:#1d2229;color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:7px;
-  padding:5px 9px;font-size:12px;line-height:1.35;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:0;transform:translateY(3px);transition:opacity .1s,transform .1s}
+  padding:8px;font-size:12px;line-height:1.35;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:0;transform:translateY(3px);transition:opacity .1s,transform .1s;text-box:trim-both cap alphabetic;overflow:visible}   /* (a pop-up scrolls by default: the letters below the line made Windows draw a scroll bar) */
+@supports not (text-box:trim-both cap alphabetic){ .gtip{padding:5px 8px} }
+@supports not (text-box:trim-both cap alphabetic){ .toast{padding:12px 16px} }
 .gtip.below{transform:translateY(-3px)}
 .gtip.on{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){ .gtip,#tip,.ra-tip{transition:none;transform:none} }
@@ -615,7 +642,27 @@ input.dtf.kb:not(.ico-open)::selection{background:var(--accent);color:var(--on-a
 
 /* data view */
 .status{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:550;padding:3px 10px;border-radius:999px;white-space:nowrap}
-.status.ok{background:var(--run-soft);color:var(--run)}
+.status.ok{background:var(--run-soft);color:var(--run-text)}
+/* "Backup connected": a pulsing dot; the words show for a moment when the page opens, and on hover.
+   The pill keeps its full size and everything moves with transforms and a clip (not by resizing), so the dot glides
+   in fractions of a pixel instead of stepping a whole pixel at a time as it slows down. --pw is the pill's width (set
+   when the page is drawn); folded, the dot sits .625cap - 3.5px in from the pill's right end (as far from the right as from the top). */
+.status.bad{background:var(--alert-soft);color:var(--alert-text)}
+.status.conn{position:relative;isolation:isolate;gap:0;height:24px;padding:0 11px 0 8.5px;margin-block:-8px;background:none;pointer-events:none;
+  --fold:cubic-bezier(.45,0,.25,1);--dx:calc(var(--pw, 140px) - 12px - .625cap)}
+.conn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:999px;background:var(--run-soft);pointer-events:auto;
+  clip-path:inset(0 round 12px);transition:clip-path .53s var(--fold),opacity .45s ease}
+.conn.bad::before{background:var(--alert-soft)}
+.conn .dot{position:relative;flex:none;width:7px;height:7px;border-radius:50%;background:var(--run-solid);transition:transform .53s var(--fold)}
+.conn .dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--run-solid);animation:connPulse 2s ease-out infinite}
+@keyframes connPulse{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(2.8);opacity:0}}
+.conn .lbl{display:block;margin-left:6px;clip-path:inset(0);transition:transform .53s var(--fold),clip-path .53s var(--fold),opacity .45s ease}
+.conn.bad .dot{background:var(--alert)}
+.conn.bad .dot::after{content:none}
+.conn.min:not(:hover)::before{clip-path:inset(0 0 0 calc(100% - 12px - .625cap) round 12px);opacity:0}
+.conn.min:not(:hover) .dot{transform:translateX(var(--dx))}
+.conn.min:not(:hover) .lbl{transform:translateX(var(--dx));clip-path:inset(0 var(--dx) 0 0);opacity:0}
+@media (prefers-reduced-motion: reduce){ .conn .dot::after{animation:none} }
 .status.warn{background:var(--warn-soft);color:var(--warn-text)}
 .status.err{background:var(--danger-soft);color:var(--danger)}
 .status.off{background:var(--surface-2);color:var(--muted)}
@@ -634,20 +681,54 @@ input.dtf.kb:not(.ico-open)::selection{background:var(--accent);color:var(--on-a
 .dgrid .row-actions{margin-top:auto;padding-top:12px}
 .dgrid .card-body > p + .row-actions{margin-top:auto}
 .danger-row{margin-bottom:12px}
-.danger-row .card-head{padding:14px 16px}
-.danger-row .card-head p{margin-top:3px;font-size:13px}
+.danger-row .card-head{padding:16px}
+.danger-row .card-head p{margin-top:13px;font-size:13px}
 .danger-row .card-head .btn{flex:none}
 #main.data-view{padding-top:20px;padding-bottom:20px;max-width:1100px}
 #main.data-view .view-head{margin-bottom:14px}
-#main.data-view > .card:first-of-type{margin-bottom:16px}
+#main.data-view > .card:not(.danger-row){margin-bottom:16px}   /* (the same gap between every card) */
 @media (max-width:860px){ .dgrid{grid-template-columns:minmax(0,1fr)} .danger-row .card-head{flex-wrap:wrap} }
 
 /* dialog */
 dialog{border:0;padding:0;border-radius:14px;background:var(--surface);color:var(--text);width:min(480px,calc(100vw - 32px));box-shadow:0 24px 70px rgba(0,0,0,.35)}
 dialog::backdrop{background:rgba(10,14,20,.45)}
-dialog form{padding:20px 22px}
-dialog h2{font-size:17px;margin-bottom:14px}
+dialog form{padding:22px}
+dialog h2{font-size:17px;margin-bottom:18px}
 .dlg-msg{color:var(--muted);margin-bottom:4px}
+.daily-dl{margin-top:10px;color:var(--text)}
+.path-box{display:flex;align-items:center;gap:8px;margin:10px 0;padding:5px 12px 5px 5px;border-radius:8px;background:var(--surface-2);font-size:13px;color:var(--text)}
+.path-box .path{flex:1;min-width:0;overflow-wrap:anywhere}
+.path-box .icon-btn{flex:none;color:var(--muted);transition:color .25s ease,background-color .25s ease}
+.path-box .icon-btn:hover{color:var(--accent);background:var(--surface)}
+.path-box .nw{white-space:nowrap}
+/* buttons with an icon and words: the same visible space at each edge as between the icon and the words */
+.btn:not(.ghost):not(.trim):not([aria-label]):has(> svg:first-child){padding-left:7px;padding-right:8.5px}
+.btn.sm:not(.ghost):not(.trim):not([aria-label]):has(> svg:first-child){padding-left:7.5px;padding-right:9px}
+/* a thin plus reads as further from its edge than the words do from theirs, so the words get a little more room */
+.btn:not(.ghost):not(.trim):not([aria-label]):has(> svg[data-i=plus]:first-child){padding-right:10px}
+.btn.sm:not(.ghost):not(.trim):not([aria-label]):has(> svg[data-i=plus]:first-child){padding-right:10.5px}
+/* the words next to a button's icon are centred by their capitals, so they line up with the icon (same height as before) */
+@supports (text-box:trim-both cap alphabetic){ .btn > .bl{text-box:trim-both cap alphabetic;padding-block:calc((1.2em - 1cap) / 2)} }
+@supports not (text-box:trim-both cap alphabetic){ .btn > .bl{position:relative;top:.06em} }
+.data-card > .card-head{padding-bottom:0}
+.data-card > .card-body{padding-top:8.5px}
+/* Data head: the title 16px in from the top and left; the dot alone sits as far from the right as from the top, and the
+   open pill ends in line with the box below (the icon and pill don't make the head taller than the title) */
+.data-card .ch-title .info{margin-block:-8px}
+.data-card .card-body > .path-box:first-child{margin-top:4px}
+.sub-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 2px;padding-top:12px;border-top:1px solid var(--border)}
+.sub-head h3{font-size:14px}
+.last-exp{flex:none;font-size:12px;color:var(--muted);opacity:.7;white-space:nowrap}
+.set-row{margin-bottom:12px}
+.set-row .card-head{padding:16px}
+.set-row .card-head p{margin-top:13px;font-size:13px}   /* (title to description: the same as Export & import) */
+.switch{flex:none;display:inline-flex;align-items:center;cursor:pointer}
+.err-text{color:var(--danger, #dc2626)}
+.add-rows{display:grid;gap:4px;margin:10px 0 12px;padding:10px 12px;border-radius:8px;background:var(--surface-2);font-size:13.5px;color:var(--text)}
+.add-row b{font-weight:600;font-variant-numeric:tabular-nums}
+.dlg-steps{margin:10px 0 4px;padding-left:20px;display:grid;gap:6px;color:var(--text);font-size:13.5px;line-height:1.45}
+.place-rows{display:grid;gap:6px;margin:12px 0;padding:10px 12px;border-radius:8px;background:var(--surface-2);font-size:13px}
+.place-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;overflow-wrap:anywhere}
 .dlg-msg b{color:var(--text)}
 .field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;min-width:0}
 .field > label{font-size:12px;font-weight:500;color:var(--muted)}
@@ -774,7 +855,7 @@ dialog:has(.ra-dlg){width:min(780px,calc(100vw - 32px))}
 
 /* toast */
 #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:100;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;width:max-content;max-width:calc(100vw - 32px)}
-.toast{pointer-events:auto;background:#1d2229;color:#fff;padding:10px 16px;border-radius:10px;display:flex;gap:14px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:13px;animation:tin .18s ease-out}
+.toast{pointer-events:auto;background:#1d2229;color:#fff;padding:16px;border-radius:10px;display:flex;gap:14px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:13px;animation:tin .18s ease-out}
 .toast button{border:0;background:none;color:#9dbaff;font-weight:550;padding:0}
 .toast.error{background:#b3261e}
 @keyframes tin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -828,7 +909,7 @@ dialog:has(.ra-dlg){width:min(780px,calc(100vw - 32px))}
     <button data-action="view" data-view="projects">Projects</button>
     <button data-action="view" data-view="templates">Templates</button>
     <button data-action="view" data-view="summary">Summary</button>
-    <button data-action="view" data-view="data">Backup</button>
+    <button data-action="view" data-view="data">Settings</button>
   </nav>
 </header>
 <div id="banner"></div>
@@ -847,12 +928,45 @@ dialog:has(.ra-dlg){width:min(780px,calc(100vw - 32px))}
 /* =========================================================
    Constants & helpers
    ========================================================= */
-const APP_VERSION = '1.94';
+const APP_VERSION = '2.29';
+/* Inside the Time Tracker desktop app (Windows), the app hands the page real file dialogs and file access
+   (window.ttDesktop, from its preload script). The page then backs up through those instead of the browser's
+   file permissions, and the floating timer opens as a window that stays on top. In a browser, DESK is null. */
+const DESK = window.ttDesktop || null;
+const HOME_NAME = DESK ? 'the app' : 'this browser';
+// In the desktop app your data is one file you can see and move (Documents\Time Tracker\time-tracker-data.json).
+// The app writes it on every change and the tracker reads it when it starts. (Older app versions don't have it.)
+const DATAFILE = DESK && DESK.data && typeof DESK.data.write === 'function' ? { path:'', mtime:0, error:'', state:'', aside:'', retry:0 } : null;
+const DATAPICK = !!(DATAFILE && typeof DESK.data.chooseFolder === 'function');   // Choose backup location (app 1.0.4 and later)
+const STARTUP = DESK && DESK.startup && typeof DESK.startup.get === 'function' ? DESK.startup : null;   // open at sign-in
+// a file on disk, looking like the browser's file handles so the backup code works the same either way
+function deskHandle(path){
+  const fail = r => { const e = new Error(r.message || r.code || 'file error'); e.name = r.code === 'ENOENT' ? 'NotFoundError' : r.code === 'EACCES' || r.code === 'EPERM' || r.code === 'NOTALLOWED' ? 'NotAllowedError' : 'Error'; throw e; };
+  return { kind:'file', ttPath:path, name:String(path).split(/[\\/]/).pop(),
+    getFile: async () => { const r = await DESK.readFile(path); if (!r.ok) fail(r); return { text: async () => r.text, size:r.text.length }; },
+    createWritable: async () => { let buf = ''; return { write: async d => { buf += d; }, close: async () => { const r = await DESK.writeFile(path, buf); if (!r.ok) fail(r); } }; },
+    queryPermission: async () => 'granted', requestPermission: async () => 'granted', isSameEntry: async o => !!o && o.ttPath === path };
+}
+if (DESK) {
+  const abort = () => Object.assign(new Error('The user aborted a request.'), { name:'AbortError' });
+  window.showSaveFilePicker = async o => { const p = await DESK.saveDialog((o && o.suggestedName) || 'time-tracker-backup.json'); if (!p) throw abort(); return deskHandle(p); };
+  window.showOpenFilePicker = async () => { const p = await DESK.openDialog(); if (!p) throw abort(); return [deskHandle(p)]; };
+}
 // where new versions are published (a public GitHub repository); the tracker checks it now and then
 const UPDATE_URL = 'https://raw.githubusercontent.com/Goodvyn/time-tracker/main/time-tracker.html';
 const UPD_KEY = 'timeTracker.update.v1';
-const STORE_KEY = 'timeTracker.data.v1';
-const META_KEY  = 'timeTracker.meta.v1';
+/* Copies of this file. Chrome keeps ONE storage for every file opened from this computer, so a copy of the tracker in
+   another folder (a demo, say) would show and change your real data. So: the first place the tracker is opened from
+   uses the main data; a copy opened from somewhere else asks once whether it's the same tracker (moved, or a second
+   shortcut) or should get data of its own. Its own data never touches the main data, and switching deletes nothing. */
+const PLACES_KEY = 'timeTracker.places.v1';
+const HERE = (() => { try { return decodeURIComponent(location.pathname); } catch { return location.pathname; } })();
+const places = (() => { let x = null; try { x = JSON.parse(localStorage.getItem(PLACES_KEY) || 'null'); } catch {}
+  x = x && typeof x === 'object' ? x : {}; x.map = x.map || {}; x.seen = x.seen || {}; x.own = x.own || {}; return x; })();
+const SPACE = places.map[HERE] || 'main';          // 'main', or the id of this copy's own data
+const SFX = SPACE === 'main' ? '' : '.' + SPACE;
+const STORE_KEY = 'timeTracker.data.v1' + SFX;
+const META_KEY  = 'timeTracker.meta.v1' + SFX;
 const FAR = 8.64e15;
 const DAY = 86400000;
 const COLORS = ['#2f6fed','#16a34a','#e8590c','#9c36b5','#d6336c','#0c8599','#e0a100','#5f3dc4','#166534','#868e96'];
@@ -884,6 +998,7 @@ const ICONS = {
   up:'<path d="m6 15 6-6 6 6"/>',
   down:'<path d="m6 9 6 6 6-6"/>',
   file:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>',
+  folder:'<path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h3.6l2 2h7.4a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/>',
   grip:'<circle cx="9" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="9" cy="18" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="18" r="1.6" fill="currentColor" stroke="none"/>',
   pip:'<rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12" y="12" width="6.5" height="4.5" rx="1" fill="currentColor" stroke="none"/>',
   reset:'<path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4.5v4h4"/>',
@@ -897,7 +1012,7 @@ const ICONS = {
   xmark:'<path d="M7 7l10 10M17 7 7 17"/>',
   shield:'<path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/>'
 };
-const icon = (n, s=16) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
+const icon = (n, s=16) => `<svg data-i="${n}" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
 
 /* ---------- time helpers ---------- */
 function startOfDay(t){ const d = new Date(t); d.setHours(0,0,0,0); return d.getTime(); }
@@ -967,11 +1082,15 @@ function parseDuration(s){
    ========================================================= */
 let S = null;            // persisted data
 let meta = {};           // per-browser settings (UI, backup info)
-const mini = { supported:true, pip:'documentPictureInPicture' in window, win:null }; // floating timer window (pip: Chrome / Edge's always-on-top kind; otherwise a small pop-up window)
+const mini = { supported:true, pip:'documentPictureInPicture' in window && !DESK, win:null }; // floating timer window (pip: Chrome / Edge's always-on-top kind; otherwise a small pop-up window)
 const ui = { view:'projects', projectId:null, showArchived:false, showDone:true, logGroups:10, range:'week', customFrom:'', customTo:'', expanded:{}, tplOpen:{}, dayKey:'', logOpen:{}, logSel:null };
 
 const emptyState = () => ({ version:1, projects:[], templates:[], entries:[] });
 const isEmpty = () => !S.projects.length && !S.entries.length && S.templates.length <= 1;
+// The example template a new tracker starts with (until you change it, it isn't your data)
+const SAMPLE_TPL = { name:'Survey project', tasks:['Questionnaire review','Survey programming','QA / testing','Soft launch','Fielding & monitoring','Data cleaning & checks','Data delivery / reporting'] };
+const isSampleTpl = t => t.name === SAMPLE_TPL.name && t.tasks.join('\n') === SAMPLE_TPL.tasks.join('\n');
+const onlySample = () => !S.projects.length && !S.entries.length && S.templates.every(isSampleTpl);   // (a new tracker: nothing of yours yet)
 
 function normalize(d){
   if (!d || typeof d !== 'object') throw new Error('This file is not a Time Tracker backup.');
@@ -1010,6 +1129,7 @@ function normalize(d){
 }
 
 function load(){
+  if (DATAFILE && loadDataFile()) return true;
   try {
     const raw = localStorage.getItem(STORE_KEY);
     if (raw) { S = normalize(JSON.parse(raw)); return true; }
@@ -1038,7 +1158,128 @@ function save(){
   }
   try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); }
   catch (e) { toast('Could not save: ' + esc(e.message), {error:true}); }
-  scheduleBackup();
+  if (DATAFILE) writeDataFile(); else scheduleBackup();
+}
+/* ---------- the desktop app's data file ----------
+   state: '' in use · 'locked' there but can't be opened right now · 'missing' moved or deleted (the app asks where it is) */
+const fileBase = p => String(p || '').split(/[\\/]/).pop();
+const fileDir = p => String(p || '').replace(/[\\/][^\\/]*$/, '');
+// a file path that wraps between folders, never inside the file name
+function pathHtml(p){
+  const parts = String(p).split(/([\\/])/), name = parts.pop();
+  return parts.map((x, i) => esc(x) + (i % 2 ? '<wbr>' : '')).join('') + `<span class="nw">${esc(name)}</span>`;
+}
+function noteDataSeen(){
+  if (DATAFILE.path && meta.dataSeen !== DATAFILE.path) { meta.dataSeen = metaChosen.dataSeen = DATAFILE.path; saveMeta(); }
+}
+function loadDataFile(){
+  let r; try { r = DESK.data.read(); } catch (e) { r = { ok:false, exists:true, error:e.message }; }
+  if (r.path) DATAFILE.path = r.path;
+  if (!r.ok) {   // there, but locked or unreadable right now: never write over it; use the app's own copy and try again
+    DATAFILE.state = 'locked'; DATAFILE.error = r.error || 'unknown error';
+    console.error('[data] couldn’t open the data file:', DATAFILE.error);
+    clearTimeout(DATAFILE.retry); DATAFILE.retry = setTimeout(retryDataFile, 3000);
+    return false;
+  }
+  if (!r.exists) {   // first start: what the app has goes into the file at the first save. Gone since: ask where it is.
+    if (meta.dataSeen) { DATAFILE.state = 'missing'; console.warn('[data] the data file isn’t there anymore:', DATAFILE.path); }
+    return false;
+  }
+  if (!r.text.trim()) return false;
+  try {
+    S = normalize(JSON.parse(r.text)); DATAFILE.mtime = r.mtimeMs;
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch {}
+    noteDataSeen();
+    return true;
+  } catch (e) {
+    const k = DESK.data.keepAside();   // damaged: keep it next to the new one, never overwrite it
+    DATAFILE.aside = (k && k.path) || '';
+    console.error('[data] the data file couldn’t be read, kept as', DATAFILE.aside, e.message);
+    return false;
+  }
+}
+function writeDataFile(){
+  if (!DATAFILE || DATAFILE.state) return;
+  let r; try { r = DESK.data.write(JSON.stringify(exportPayload(), null, 2)); } catch (e) { r = { ok:false, error:e.message }; }
+  if (r && r.path) DATAFILE.path = r.path;
+  if (r && r.ok) {
+    const first = !DATAFILE.mtime;
+    DATAFILE.mtime = r.mtimeMs; noteDataSeen();
+    if (DATAFILE.error) { DATAFILE.error = ''; renderBanner(); if (ui.view === 'data') render(); }
+    else if (first && window.__ttStarted) { if (ui.view === 'data') render(); else renderTabs(); }   // (shows "Backup connected")
+  } else {
+    const first = !DATAFILE.error;
+    DATAFILE.error = (r && r.error) || 'unknown error';
+    console.error('[data] couldn’t save the data file:', DATAFILE.error);
+    if (first) { renderBanner(); if (ui.view === 'data') render(); }
+    clearTimeout(DATAFILE.retry); DATAFILE.retry = setTimeout(writeDataFile, 5000);
+  }
+}
+// Use the data in a file, together with anything only the app has (so nothing is lost), and save to that file from now on
+function adoptDataFile(d, path, mtime){
+  const add = d ? (onlySample() ? { total:0 } : mergeData(d, S, null, true)) : { total:1 };
+  if (d && !add.total) S = d; else if (d) S = add.data;
+  DATAFILE.state = ''; DATAFILE.error = ''; if (path) DATAFILE.path = path; DATAFILE.mtime = mtime || 0;
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch {}
+  if (add.total) writeDataFile(); else noteDataSeen();
+  if (ui.projectId && !S.projects.some(p => p.id === ui.projectId)) ui.projectId = null;
+  render();
+  return add;
+}
+// The file couldn't be opened at startup: once it can, combine it with anything added here meanwhile
+function retryDataFile(){
+  if (!DATAFILE || DATAFILE.state !== 'locked') return;
+  let r; try { r = DESK.data.read(); } catch (e) { r = { ok:false, error:e.message }; }
+  if (!r.ok) { DATAFILE.error = r.error || DATAFILE.error; clearTimeout(DATAFILE.retry); DATAFILE.retry = setTimeout(retryDataFile, 10000); return; }
+  let d = null;
+  if (r.exists && r.text.trim()) try { d = normalize(JSON.parse(r.text)); } catch {}
+  adoptDataFile(d, r.path, r.mtimeMs);
+}
+// Changed outside the app (e.g. you copied your file from another computer over it): load it.
+// Gone (moved or deleted): ask where it is. Back again: use it.
+function checkDataFile(){
+  if (!DATAFILE || DATAFILE.state === 'locked') return;
+  let st; try { st = DESK.data.stat(); } catch { return; }
+  if (!st.exists) {
+    if (!DATAFILE.state && (DATAFILE.mtime || meta.dataSeen)) {
+      DATAFILE.state = 'missing'; console.warn('[data] the data file isn’t there anymore:', DATAFILE.path);
+      renderBanner(); if (ui.view === 'data') render();
+    }
+    return;
+  }
+  const back = DATAFILE.state === 'missing';
+  if (!back && st.mtimeMs === DATAFILE.mtime) return;
+  const r = DESK.data.read(); if (!r.ok || !r.exists) return;
+  let d; try { d = normalize(JSON.parse(r.text)); } catch { return; }
+  if (back) { adoptDataFile(d, r.path, r.mtimeMs); toast('Found your data file again'); return; }
+  DATAFILE.mtime = r.mtimeMs;
+  if (JSON.stringify(d) === JSON.stringify(normalize(JSON.parse(JSON.stringify(S))))) return;
+  S = d; try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch {}
+  if (ui.projectId && !S.projects.some(p => p.id === ui.projectId)) ui.projectId = null;
+  render(); toast('Your data file was changed outside the app, so the tracker loaded it');
+  console.info('[data] reloaded after an outside change');
+}
+if (DATAFILE) {
+  window.addEventListener('focus', checkDataFile);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) checkDataFile(); });
+}
+// Choose backup location: the data file goes to that folder and the old one is deleted.
+// If that folder already has a data file (e.g. copied from another computer), both are combined: nothing is lost.
+async function chooseDataLocation(){
+  const r = await DESK.data.chooseFolder(); if (!r || r.same) return;
+  const name = fileBase(r.path);
+  if (r.text && r.text.trim()) {
+    let d;
+    try { d = normalize(JSON.parse(r.text)); } catch { toast(`<b>${esc(name)}</b> in that folder isn’t Time Tracker data.`, { error:true }); return; }
+    S = onlySample() ? d : mergeData(d, S, null, true).data;
+  }
+  const m = DESK.data.moveTo(r.path, JSON.stringify(exportPayload(), null, 2));
+  if (!m || !m.ok) { toast(`Couldn’t save to that folder: ${esc((m && m.error) || 'unknown error')}`, { error:true }); return; }
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); } catch {}
+  DATAFILE.state = ''; DATAFILE.error = ''; DATAFILE.path = m.path; DATAFILE.mtime = m.mtimeMs; noteDataSeen();
+  if (ui.projectId && !S.projects.some(p => p.id === ui.projectId)) ui.projectId = null;
+  render(); toast(`Saved to <b>${esc(fileDir(m.path))}</b>`);
+  console.info('[data] now in', m.path);
 }
 function loadMeta(){
   let raw = null;
@@ -1189,12 +1430,13 @@ function tick(){
 /* =========================================================
    Rendering
    ========================================================= */
+let prevView = '', connOpenAt = 0, connTimer = 0;   // (opening Settings shows "Backup connected" in words for a moment)
 function render(){
   ensureSelection();
+  if (ui.view === 'data' && prevView !== 'data') connOpenAt = Date.now();
+  prevView = ui.view;
   $('#brand').innerHTML = `${icon('clock',20)}<span>Time Tracker</span>`;
-  $$('#tabs button').forEach(b => { b.classList.toggle('attn', b.dataset.view === 'data' && ['paused','missing','error'].includes(backup.status));
-    b.title = b.classList.contains('attn') ? (backup.status === 'paused' ? 'Auto-backup is paused' : 'Auto-backup needs attention') : '';
-    b.classList.toggle('active', b.dataset.view === ui.view); b.setAttribute('aria-current', b.dataset.view === ui.view ? 'page' : 'false'); });
+  renderTabs();
   $('#layout').classList.toggle('no-side', ui.view !== 'projects');
   $('#main').classList.toggle('wide', ui.view === 'projects');
   $('#main').classList.toggle('data-view', ui.view === 'data');
@@ -1212,6 +1454,7 @@ function render(){
   renderMiniCtl();
   renderMini();
   fitLogPanel();
+  ovsAll();
   meta.ui = { view:ui.view, projectId:ui.projectId, showArchived:ui.showArchived, showDone:ui.showDone, range:ui.range, customFrom:ui.customFrom, customTo:ui.customTo };
   saveMeta();
 }
@@ -1337,27 +1580,85 @@ function initUpdates(){
 }
 function applyUpdate(){ window.__ttReloading = true; location.reload(); }   // the timer and everything else are saved, so a reload is safe
 
+/* ---------- copies of the file (see PLACES_KEY) ---------- */
+function savePlaces(){ try { localStorage.setItem(PLACES_KEY, JSON.stringify(places)); } catch {} }
+// "…\Demo\time-tracker.html" from the file's address
+function placeName(path){ const parts = String(path || '').split('/').filter(Boolean); return parts.length > 1 ? parts.slice(-2).join(' › ') : parts.join('') || 'this file'; }
+const mainCopies = () => Object.keys(places.map).filter(k => places.map[k] === 'main');
+// called once at start: remember this place; returns true if we need to ask what this copy is
+function notePlace(hadData){
+  let ask = false;
+  if (!(HERE in places.map)) {
+    if (!Object.keys(places.map).length || !hadData) places.map[HERE] = 'main';   // the first place ever, or no data to mix up
+    else ask = true;
+  }
+  if (!ask) places.seen[HERE] = Date.now();
+  savePlaces();
+  return ask;
+}
+function setPlace(space){
+  if (space !== 'main') places.own[HERE] = space;
+  places.map[HERE] = space; places.seen[HERE] = Date.now(); savePlaces();
+  if (space !== SPACE) { window.__ttReloading = true; location.reload(); }
+}
+const ownSpaceId = () => places.own[HERE] || Math.random().toString(36).slice(2, 8);
+function askPlace(){
+  const from = mainCopies().sort((a, b) => (places.seen[b] || 0) - (places.seen[a] || 0))[0];
+  openDialog(`<form><h2>Is this a copy of your tracker?</h2>
+    <p class="dlg-msg">This file was opened from a different place than your tracker usually is:</p>
+    <div class="place-rows">
+      <div class="place-row"><span class="muted">This file</span><span>${esc(placeName(HERE))}</span></div>
+      <div class="place-row"><span class="muted">Your tracker</span><span>${esc(placeName(from))} <span class="muted">· ${S.projects.length} project${S.projects.length === 1 ? '' : 's'}, ${S.entries.length} time entr${S.entries.length === 1 ? 'y' : 'ies'}</span></span></div>
+    </div>
+    <p class="dlg-msg">Making a copy for a demo or a test? Give it its own data, and your tracker stays exactly as it is. Moved the file, or opening the same tracker from another shortcut? Keep using your data here.</p>
+    <div class="dlg-actions"><button type="submit" class="btn" value="main">Use my data here</button><button type="submit" class="btn primary" value="own" data-main autofocus>Give this copy its own data</button></div></form>`,
+    (fd, form, sub) => { setPlace(sub && sub.value === 'own' ? ownSpaceId() : 'main'); });
+}
+async function switchPlace(){
+  const ok = SPACE === 'main'
+    ? await confirmDialog({ title:'Give this copy its own data?', ok:'Give it its own data', danger:false,
+        message:`This copy (<b>${esc(placeName(HERE))}</b>) will start with ${places.own[HERE] ? 'the data it had before' : 'no projects or time'} and stop changing your tracker. Your tracker's data isn't touched.` })
+    : await confirmDialog({ title:'Use your tracker’s data here?', ok:'Use my tracker’s data', danger:false,
+        message:`This copy will show your tracker's data, and changes here will change your tracker. This copy's own data is kept, and comes back if you switch again.` });
+  if (ok) setPlace(SPACE === 'main' ? ownSpaceId() : 'main');
+}
+
 function banner(kind, msg, actions){
   return `<div class="banner bn-${kind}"><span class="grow">${msg}</span>${actions || ''}</div>`;   // bn-: plain "info" is the ⓘ icon's class
 }
+const dataConnected = () => !!(DATAFILE && DATAFILE.mtime && !DATAFILE.state && !DATAFILE.error);
+function renderTabs(){
+  const attn = DATAFILE ? !dataConnected() : ['paused','missing','error'].includes(backup.status);
+  $$('#tabs button').forEach(b => { b.classList.toggle('attn', b.dataset.view === 'data' && attn);
+    b.title = b.classList.contains('attn') ? (DATAFILE ? 'Backup isn’t connected' : backup.status === 'paused' ? 'Auto-backup is paused' : 'Auto-backup needs attention') : '';
+    b.classList.toggle('active', b.dataset.view === ui.view); b.setAttribute('aria-current', b.dataset.view === ui.view ? 'page' : 'false'); });
+}
 function renderBanner(){
+  renderTabs();
   let html = '';
   if (backup.status === 'ok' && backup.peek && isEmpty()) {
     html = banner('info', `${icon('shield',15)} Found your backup file <b>${esc(backup.name)}</b> with ${backup.peek.projects} project(s) and ${backup.peek.entries} time entries.`,
-      `<button class="btn sm primary" data-action="backup-restore-linked">Restore it</button>`);
+      `<button class="btn sm primary" data-action="backup-restore-linked">Add it to the tracker</button>`);
   } else if (backup.status === 'paused') {
     html = '';   // no bar: the tracker asks Chrome on your first click (autoResumeBackup); the Backup tab shows a dot meanwhile
   } else if (backup.status === 'missing') {
     html = banner('warn', `Auto-backup stopped: <b>${esc(backup.name)}</b> was moved, renamed or deleted. Your data here is safe.`,
-      `<button class="btn sm primary" data-action="backup-connect">Reconnect backup file</button>${ui.view !== 'data' ? '<button class="btn sm ghost" data-action="view" data-view="data">Details</button>' : ''}`);
+      `<button class="btn sm primary" data-action="backup-existing">Find backup file…</button>${ui.view !== 'data' ? '<button class="btn sm ghost" data-action="view" data-view="data">Details</button>' : ''}`);
   } else if (backup.status === 'error') {
     html = banner('error', `Auto-backup failed: ${esc(backup.error)}`, `<button class="btn sm" data-action="view" data-view="data">Fix it</button>`);
-  } else if (backup.status !== 'ok' && S.entries.length > 0 && !(meta.bannerSnoozeUntil > Date.now())) {
+  } else if (DATAFILE && DATAFILE.state === 'missing') {
+    html = banner('warn', `Your data file isn’t at <b>${esc(DATAFILE.path)}</b> anymore.`,
+      (DATAPICK ? `<button class="btn sm primary" data-action="data-location">Choose backup location</button>` : '') + `<button class="btn sm" data-action="data-recreate">Save it there again</button>`);
+  } else if (DATAFILE && DATAFILE.error) {
+    html = banner('error', DATAFILE.state === 'locked'
+      ? `Couldn’t open your data file (${esc(DATAFILE.error)}). The tracker is using the app’s own copy and will try again.`
+      : `Couldn’t save to your data file (${esc(DATAFILE.error)}). Your changes are kept in the app and saved as soon as the file can be written.`);
+  } else if (!DATAFILE && backup.status !== 'ok' && !dailyDlOn() && S.entries.length > 0 && !(meta.bannerSnoozeUntil > Date.now())) {   // (with the daily copy on, there's no need to nag)
     const last = meta.lastExportAt;
     if (!last || Date.now() - last > 7*DAY) {
-      html = banner('info', `${icon('shield',15)} Your time data only lives in this browser${last ? ` (last exported ${fmtRelative(last)})` : ''}. Back it up so clearing browser data can't wipe it.`,
+      html = banner('info', `${icon('shield',15)} Your time data only lives in ${HOME_NAME}${last ? ` (last exported ${fmtRelative(last)})` : ''}. Back it up so clearing browser data can't wipe it.`,
         (backup.supported
-          ? `<button class="btn sm primary" data-action="backup-connect">Set up auto-backup</button>`
+          ? `<button class="btn sm primary" data-action="view" data-view="data">Set up auto-backup</button>`
           : `<button class="btn sm primary" data-action="export-json">Export backup</button>`) +
         `<button class="btn sm ghost" data-action="banner-snooze">Remind me later</button>`);
     }
@@ -1396,8 +1697,8 @@ function renderProjectView(){
       <h2>Start tracking your time</h2>
       <p>Create a project, add tasks (or pull them from a template), then hit play.</p>
       <div class="actions">
-        <button class="btn primary" data-action="new-project">${icon('plus',14)} New project</button>
-        <button class="btn" data-action="import-json">${icon('upload',14)} Restore from backup file</button>
+        <button class="btn primary" data-action="new-project">${icon('plus',14)}<span class="bl">New project</span></button>
+        <button class="btn" data-action="import-json">${icon('upload',14)}<span class="bl">Import from backup</span></button>
       </div></div></div>`;
     return;
   }
@@ -1474,13 +1775,13 @@ function renderProjectView(){
       </div>
       <form class="addtask" data-form="add-task" autocomplete="off">
         <input class="input" name="name" placeholder="Add a task and press Enter" maxlength="200" aria-label="New task name">
-        <button class="btn" type="submit" disabled title="Type a task name first">${icon('plus',14)} Add</button>
+        <button class="btn" type="submit" disabled title="Type a task name first">${icon('plus',14)}<span class="bl">Add</span></button>
       </form>
     </section>
     </div><aside class="pcol-log">
     <section class="card log-card">
       <div class="card-head">
-        <div class="ch-normal"><span class="ch-title"><h2>Time log</h2>${logDayKeys(p).length ? `<span class="info" tabindex="0" role="button" aria-label="How to select several entries">${icon('info', 15)}<span class="info-pop" role="tooltip"><span class="ip-t">Select several entries</span><ol><li>Press and hold an entry until it fills in. <b>Don't let go yet.</b></li><li>Drag up or down, then let go.</li></ol><span class="ip-n">Then click entries to add or remove them.</span></span></span>` : ''}</span><span class="ch-btns">${logDayKeys(p).length ? `<button class="btn sm ghost" data-action="log-fold">${foldLabel(logAnyOpen(p))}</button>` : ''}<button class="btn sm" data-action="add-entry">${icon('plus',13)} Add time</button></span></div>
+        <div class="ch-normal"><span class="ch-title"><h2>Time log</h2>${logDayKeys(p).length ? `<span class="info" tabindex="0" role="button" aria-label="How to select several entries">${icon('info', 15)}<span class="info-pop" role="tooltip"><span class="ip-t">Select several entries</span><ol><li>Press and hold an entry until it fills in. <b>Don't let go yet.</b></li><li>Drag up or down, then let go.</li></ol><span class="ip-n">Then click entries to add or remove them.</span></span></span>` : ''}</span><span class="ch-btns">${logDayKeys(p).length ? `<button class="btn sm ghost" data-action="log-fold">${foldLabel(logAnyOpen(p))}</button>` : ''}<button class="btn sm" data-action="add-entry">${icon('plus',13)}<span class="bl">Add time</span></button></span></div>
         <div class="ch-sel"><span class="ch-count"></span><button class="btn sm" data-action="log-sel-cancel">Cancel</button></div>
       </div>
       <div class="log-body" data-pid="${p.id}">${logHtml(p)}</div>
@@ -1607,7 +1908,7 @@ function renderTemplates(){
   $('#main').innerHTML = `
     <div class="view-head">
       <div><h1>Templates</h1><p>Reusable task lists. Use one when you create a project, or add its tasks to an existing project.</p></div>
-      <button class="btn primary" data-action="new-template">${icon('plus',14)} New template</button>
+      <button class="btn primary" data-action="new-template">${icon('plus',14)}<span class="bl">New template</span></button>
     </div>
     ${ts.length ? `<div class="tgrid">${ts.map(t => {
       const LIMIT = 7;
@@ -1619,8 +1920,8 @@ function renderTemplates(){
         <div class="tpl-head"><h3>${esc(t.name)}</h3><span class="muted">${t.tasks.length} task${t.tasks.length === 1 ? '' : 's'}</span></div>
         <ol>${shown.map(x => `<li>${esc(x)}</li>`).join('')}${collapsible ? `<li class="more-tasks"><button class="link-inline" data-action="tpl-expand" data-id="${t.id}" aria-expanded="${open}">${open ? 'Show less' : `+ ${t.tasks.length - LIMIT} more`}</button></li>` : ''}${!t.tasks.length ? '<li class="more-tasks">No tasks yet</li>' : ''}</ol>
         <div class="tpl-actions">
-          <button class="btn sm primary" data-action="tpl-new-project" data-id="${t.id}">${icon('plus',13)} New project</button>
-          <button class="btn sm" data-action="tpl-edit" data-id="${t.id}">${icon('edit',13)} Edit</button>
+          <button class="btn sm primary" data-action="tpl-new-project" data-id="${t.id}">${icon('plus',13)}<span class="bl">New project</span></button>
+          <button class="btn sm" data-action="tpl-edit" data-id="${t.id}">${icon('edit',13)}<span class="bl">Edit</span></button>
           <span class="spacer"></span>
           <button class="icon-btn" data-action="tpl-duplicate" data-id="${t.id}" title="Duplicate" aria-label="Duplicate template">${icon('copy',15)}</button>
           <button class="icon-btn danger" data-action="tpl-delete" data-id="${t.id}" title="Delete" aria-label="Delete template">${icon('trash',15)}</button>
@@ -1630,7 +1931,7 @@ function renderTemplates(){
       <div class="empty-icon">${icon('template',36)}</div>
       <h2>No templates yet</h2>
       <p>Create a template with the tasks you repeat on every project,<br>or open a project and choose “Save tasks as template”.</p>
-      <div class="actions"><button class="btn primary" data-action="new-template">${icon('plus',14)} New template</button></div>
+      <div class="actions"><button class="btn primary" data-action="new-template">${icon('plus',14)}<span class="bl">New template</span></button></div>
     </div></div>`}`;
 }
 
@@ -1742,7 +2043,7 @@ function renderSummary(){
   $('#main').innerHTML = `
     <div class="sum-top">
       <span class="sum-range">${rangeLabel(from, to)}</span>
-      <details class="menu"><summary class="icon-btn" title="More" aria-label="More options">${icon('morev', 16)}</summary><div class="menu-list">
+      <details class="menu"><summary class="icon-btn" aria-label="More options">${icon('morev', 16)}</summary><div class="menu-list">
         <button data-action="export-csv-range">${icon('download')} Export CSV</button>
       </div></details>
     </div>
@@ -1778,6 +2079,12 @@ window.addEventListener('resize', fitSeg);
 /* Total: one click switches 29h 28m ⇄ 29.47 h. Dragging across it selects text as usual (no switch);
    a double-click selects the whole value so it can be copied. */
 let totTimer = 0, totClickAt = 0, totFiredFor = -1;
+// Most of the page can't be selected, so clicking it wouldn't clear a selection by itself: clear it here
+const SELECTABLE = 'input,textarea,[contenteditable],.pt-name,.tname,.sname .n,.tpl-head h3,.tpl li,.path-box .path,.footnote .ver,.tb-val .num';
+document.addEventListener('mousedown', e => {
+  const sel = window.getSelection();
+  if (sel && !sel.isCollapsed && !(e.target.closest && e.target.closest(SELECTABLE))) sel.removeAllRanges();
+}, true);
 function setTotalDec(on){
   ui.totalDec = on;
   const v = $('#main .tb-val'); if (!v) return;
@@ -1793,7 +2100,7 @@ document.addEventListener('click', e => {
     const r = document.createRange(); r.selectNodeContents(shown); sel.removeAllRanges(); sel.addRange(r);
     return;
   }
-  if (sel && !sel.isCollapsed && v.contains(sel.anchorNode)) return;      // just finished selecting text: leave it
+  if (sel && !sel.isCollapsed && v.contains(sel.anchorNode)) { totClickAt = e.timeStamp; totFiredFor = -1; return; }   // just finished selecting text: leave it
   clearTimeout(totTimer);
   const at = totClickAt = e.timeStamp;
   totTimer = setTimeout(() => { totTimer = 0; totFiredFor = at; setTotalDec(!ui.totalDec); }, 220);
@@ -1831,8 +2138,9 @@ function timelineCard(d0, d1, rows, pOrder){
     <div class="chart tlines">${lanes}</div></section>`;
 }
 
-/* Chart tooltip: follows the mouse along a bar / timeline lane and names the project and task under it */
-let tipSeg = null;
+/* Chart tooltip: names the project and task under the mouse. It stays put while the mouse moves under it,
+   and the mouse pushes it along once it reaches either side. */
+let tipSeg = null, tipLeft = null;
 function tipEl(){ let t = $('#tip'); if (!t) { t = document.createElement('div'); t.id = 'tip'; t.setAttribute('role', 'tooltip'); document.body.appendChild(t); } return t; }
 function unhover(sg){ if (sg) sg.classList.remove('hover'); }
 // every piece of the hovered project lights up (half strength) across the whole chart
@@ -1844,7 +2152,7 @@ function litProject(pid){
   ch.querySelectorAll('.pon').forEach(x => x.classList.remove('pon'));
   if (pid) ch.querySelectorAll(`[data-pid="${CSS.escape(pid)}"]`).forEach(x => x.classList.add('pon'));
 }
-function hideTip(){ const t = $('#tip'); if (t) t.classList.remove('on'); unhover(tipSeg); tipSeg = null; litList(null); litProject(null); }
+function hideTip(){ const t = $('#tip'); if (t) t.classList.remove('on'); unhover(tipSeg); tipSeg = null; tipLeft = null; litList(null); litProject(null); }
 // light up the project (and, if it's open, the task) in the Total list, and bring it into view
 function litList(pid, tid){
   $$('.sum-total .srow.lit').forEach(r => r.classList.remove('lit'));
@@ -1883,7 +2191,11 @@ function showTip(sg, row, x){
   }
   tip.classList.add('on');
   const br = row.querySelector('.dbar, .ttrack').getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
-  const left = Math.min(window.innerWidth - w - 8, Math.max(8, x - w / 2));
+  const M = 4;   // (how far inside its edge the mouse starts pushing)
+  let left = tipLeft == null ? x - w / 2 : tipLeft;
+  if (x < left + M) left = x - M; else if (x > left + w - M) left = x - w + M;
+  left = Math.min(window.innerWidth - w - 8, Math.max(8, left));
+  tipLeft = left;
   const top = br.top - h - 8 >= 8 ? br.top - h - 8 : br.bottom + 8;
   tip.style.left = left + 'px'; tip.style.top = top + 'px';
 }
@@ -1893,6 +2205,74 @@ function onChartPointer(e){
   if (sg) showTip(sg, row, e.clientX); else if (tipSeg) hideTip();
 }
 const lastPtr = { x:-1, y:-1 };
+
+/* Scrollbar for the lists inside cards: a thin pill drawn over the rows' right edge (the list keeps its full width).
+   It fades in while the mouse is over the list or it scrolls, and can be dragged. */
+const OVS = '.tscroll, .log-body, .slist, .chart';
+let ovsHot = null, ovsDrag = null, ovsRaf = 0, ovsQuiet = 0;
+const ovsLive = new Set();
+function ovsOf(t){ if (!t || !t.closest) return null; if (t.classList.contains('ovs')) return t._for || null; return t.closest(OVS); }
+function ovsSync(el){
+  let t = el._ovs; const host = el.parentNode;
+  if (!t || t.parentNode !== host) {
+    if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+    t = document.createElement('div'); t.className = 'ovs'; t.setAttribute('aria-hidden', 'true'); t._for = el; el._ovs = t; host.appendChild(t);
+  }
+  const ch = el.clientHeight, sh = el.scrollHeight, max = sh - ch;
+  if (max < 1 || !ch) { t.classList.add('none'); return ''; }
+  t.classList.remove('none');
+  const P = 3, track = ch - 2 * P, h = Math.max(28, Math.round(track * ch / sh)), top = el.offsetTop + P + (track - h) * Math.min(1, el.scrollTop / max);
+  t.style.top = top + 'px'; t.style.height = h + 'px'; t.style.right = (host.clientWidth - el.offsetLeft - el.offsetWidth + 3) + 'px';
+  return top + '|' + h;
+}
+function ovsVis(el){
+  const on = el.isConnected && (el === ovsHot || (ovsDrag && ovsDrag.el === el) || el._ovsUntil > performance.now());
+  const key = el.isConnected ? ovsSync(el) : '';
+  if (el._ovs) el._ovs.classList.toggle('on', on && key !== '');
+  if (on) { if (key !== el._ovsKey) ovsQuiet = 0; el._ovsKey = key; ovsLive.add(el); } else ovsLive.delete(el);
+}
+function ovsTick(){ ovsRaf = 0; ovsQuiet++; [...ovsLive].forEach(ovsVis); if (ovsLive.size && ovsQuiet < 30) ovsRaf = requestAnimationFrame(ovsTick); }
+function ovsKick(){ ovsQuiet = 0; if (!ovsRaf && ovsLive.size) ovsRaf = requestAnimationFrame(ovsTick); }   // (follows the list while its size changes, e.g. a day opening)
+function ovsHover(el){ if (el === ovsHot) return; const old = ovsHot; ovsHot = el; if (old) ovsVis(old); if (el) ovsVis(el); ovsKick(); }
+function ovsAll(){
+  $$('.ovs').forEach(t => { if (!t._for || !t._for.isConnected) t.remove(); });
+  if (ovsHot && !ovsHot.isConnected) { ovsLive.delete(ovsHot); ovsHot = null; }
+  if (lastPtr.x >= 0) ovsHover(ovsOf(document.elementFromPoint(lastPtr.x, lastPtr.y)));
+  [...ovsLive].forEach(ovsVis); ovsKick();
+}
+document.addEventListener('pointerover', e => { if (!ovsDrag) ovsHover(ovsOf(e.target)); });
+document.documentElement.addEventListener('pointerleave', () => { if (!ovsDrag) ovsHover(null); });
+document.addEventListener('pointermove', e => {
+  if (ovsDrag && e.pointerId === ovsDrag.id) { const el = ovsDrag.el, ch = el.clientHeight, sh = el.scrollHeight, track = ch - 6, h = Math.max(28, Math.round(track * ch / sh));
+    el.scrollTop = ovsDrag.st + (e.clientY - ovsDrag.y) * (sh - ch) / Math.max(1, track - h); }
+  else if (ovsHot) ovsKick();
+});
+document.addEventListener('pointerdown', e => {
+  const t = e.target; if (!t.classList || !t.classList.contains('ovs') || e.button !== 0 || !t._for) return;
+  e.preventDefault(); ovsDrag = { el:t._for, id:e.pointerId, y:e.clientY, st:t._for.scrollTop }; t.classList.add('drag');
+  try { t.setPointerCapture(e.pointerId); } catch {}
+});
+const ovsDrop = e => { if (!ovsDrag || e.pointerId !== ovsDrag.id) return; const el = ovsDrag.el; if (el._ovs) el._ovs.classList.remove('drag'); ovsDrag = null;
+  ovsHover(ovsOf(document.elementFromPoint(e.clientX, e.clientY))); ovsVis(el); };
+document.addEventListener('pointerup', ovsDrop); document.addEventListener('pointercancel', ovsDrop);
+document.addEventListener('scroll', e => { const el = e.target; if (!el.matches || !el.matches(OVS)) return;
+  el._ovsUntil = performance.now() + 900; ovsVis(el); ovsKick(); clearTimeout(el._ovsT); el._ovsT = setTimeout(() => ovsVis(el), 950); }, true);
+document.addEventListener('wheel', e => { const t = e.target; if (!t.classList || !t.classList.contains('ovs') || !t._for) return;
+  e.preventDefault(); t._for.scrollTop += e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? t._for.clientHeight : 1); }, { passive:false });
+document.addEventListener('click', () => { if (ovsHot) ovsKick(); }, true);
+
+/* Info popovers hug their words: when the text wraps, the box narrows as far as it can without adding a line,
+   so the lines come out even and there's no empty space on the right */
+function fitInfoPop(i){
+  const pop = i && i.querySelector(':scope > .info-pop'); if (!pop || i.classList.contains('ra-info') || pop._fitFor === innerWidth) return;
+  pop._fitFor = innerWidth; pop.style.width = '';
+  const h0 = pop.offsetHeight; let lo = 0, hi = Math.ceil(pop.getBoundingClientRect().width);
+  pop.style.width = hi + 'px'; if (pop.offsetHeight > h0) { pop.style.width = ''; return; }
+  while (hi - lo > 1) { const mid = (lo + hi) >> 1; pop.style.width = mid + 'px'; if (pop.offsetHeight > h0) lo = mid; else hi = mid; }
+  pop.style.width = hi + 'px';
+}
+document.addEventListener('pointerover', e => { if (e.target.closest) fitInfoPop(e.target.closest('.info')); });
+document.addEventListener('focusin', e => { if (e.target.closest) fitInfoPop(e.target.closest('.info')); });
 document.addEventListener('pointermove', e => { lastPtr.x = e.clientX; lastPtr.y = e.clientY; if (e.pointerType === 'mouse' || e.pointerType === 'pen') onChartPointer(e); });
 document.addEventListener('pointerdown', e => { if (e.pointerType === 'touch') onChartPointer(e); });
 document.addEventListener('pointerout', e => { if (!e.relatedTarget && tipSeg) hideTip(); });
@@ -1928,53 +2308,86 @@ function renderData(){
     case 'ok':
       pill = '<span class="status ok">● On</span>';
       body = `<p>Every change is saved to <b>${esc(backup.name)}</b> within a couple of seconds.${backup.lastWrite ? ` Last saved ${fmtRelative(backup.lastWrite)}.` : ''}</p>
-        <p class="muted">Your browser only shows the file name, not its folder, so remember where you put it. If you move or rename the file later, the tracker will ask you to reconnect it. If browser data is ever wiped, use <i>Restore from backup</i> and choose that file.</p>
-        <div class="row-actions"><button class="btn" data-action="backup-connect">${icon('file',14)} Use a different file</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
+        ${backup.handle && backup.handle.ttPath ? `<p class="muted">Saved in <b>${esc(backup.handle.ttPath.replace(/[\\/][^\\/]*$/, ''))}</b>. If you move or rename it, the tracker will ask you to find it. On a new device, install the app and choose <i>Use existing backup file</i> with it to get everything back.</p>`
+        : `<p class="muted">Your browser only shows the file name, not its folder, so remember where you put it. If you move or rename it, the tracker will ask you to find it. If browser data is ever wiped, choose <i>Use existing backup file</i> with it to get everything back.</p>`}
+        <div class="row-actions"><button class="btn" data-action="backup-connect">New backup file…</button><button class="btn" data-action="backup-existing">Use existing backup file…</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
       break;
     case 'paused':
       pill = '<span class="status warn">Paused</span>';
       body = `<p>Backing up to <b>${esc(backup.name)}</b> is paused. Chrome asks for permission again after a restart, so the tracker asks on your first click. If Chrome offers <i>Allow on every visit</i>, choose it and it won't ask again.</p>
-        <div class="row-actions"><button class="btn primary" data-action="backup-resume">Resume auto-backup</button><button class="btn" data-action="backup-connect">Use a different file</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
+        <div class="row-actions"><button class="btn primary" data-action="backup-resume">Resume auto-backup</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
       break;
     case 'missing':
       pill = '<span class="status warn">File not found</span>';
-      body = `<p><b>${esc(backup.name)}</b> is no longer where it was. It was moved, renamed or deleted, so automatic backups are paused. Everything is still saved in this browser.</p>
-        <p class="muted">Click <i>Reconnect</i>, go to the file's new location, select it and confirm <i>Replace</i>. It gets updated with your latest data and backups continue from there. You can also pick a brand-new file.</p>
-        <div class="row-actions"><button class="btn primary" data-action="backup-connect">${icon('file',14)} Reconnect backup file</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
+      body = `<p><b>${esc(backup.name)}</b> is no longer where it was. It was moved, renamed or deleted, so automatic backups are paused. Everything is still saved in ${HOME_NAME}.</p>
+        <p class="muted">Click <i>Find backup file</i> and choose it in its new place: backups continue there. Or start a new file.</p>
+        <div class="row-actions"><button class="btn primary" data-action="backup-existing">Find backup file…</button><button class="btn" data-action="backup-connect">New backup file…</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
       break;
     case 'error':
       pill = '<span class="status err">Error</span>';
       body = `<p>The last backup failed: ${esc(backup.error)}</p>
-        <div class="row-actions"><button class="btn primary" data-action="backup-connect">Choose a backup file</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
+        <div class="row-actions"><button class="btn primary" data-action="backup-connect">New backup file…</button><button class="btn" data-action="backup-existing">Use existing backup file…</button><button class="btn ghost" data-action="backup-disconnect">Turn off</button></div>`;
       break;
     default:
       pill = '<span class="status off">Off</span>';
-      body = `<p>Pick a file (for example in Documents or OneDrive) and every change you make is saved to it automatically. If your browser data is ever wiped, restore from that file and you're back where you left off.</p>
-        <div class="row-actions"><button class="btn primary" data-action="backup-connect">${icon('file',14)} Choose backup file</button></div>`;
+      body = `<p>Keep a backup file that updates by itself every time you change something. If ${DESK ? 'the app’s data' : 'your browser data'} is ever lost, or you move to another device, you get everything back from it.</p>
+        <p class="muted">Start a new file in a folder like Documents or OneDrive, or choose a backup file you already have: anything in it that’s missing here is added first.</p>
+        <div class="row-actions"><button class="btn primary" data-action="backup-connect">${icon('file',14)}<span class="bl">New backup file…</span></button><button class="btn" data-action="backup-existing">Use existing backup file…</button></div>`;
   }
+  const importInfo = `<span class="info" tabindex="0" role="button" aria-label="About importing">${icon('info', 15)}<span class="info-pop" role="tooltip">Importing only adds what’s missing: nothing in the tracker is changed or removed. You can also drop a backup file onto this ${DESK ? 'window' : 'page'}.</span></span>`;
+  const lastExp = `<span class="last-exp">${meta.lastExportAt ? `Last exported ${fmtRelative(meta.lastExportAt)}` : 'Never exported'}</span>`;
+  const startupCard = STARTUP ? (() => { const st = STARTUP.get() || {}; return st.supported === false ? '' : `<section class="card set-row"><div class="card-head">
+        <div><h2>Open on startup</h2><p class="muted">Start Time Tracker when you sign in to your device.</p></div>
+        <label class="switch"><input type="checkbox" class="chk" data-action="startup" ${st.on ? 'checked' : ''} aria-label="Open Time Tracker on startup"></label>
+      </div></section>`; })() : '';
   $('#main').innerHTML = `
-    <div class="view-head"><div><h1>Backup &amp; data</h1><p>Everything stays on this computer. Nothing is sent anywhere.</p></div></div>
-    <section class="card"><div class="card-head"><h2>Where your data is stored</h2></div><div class="card-body prose">
-      <p>Projects, templates and time entries are saved in <b>this browser's local storage</b> on this computer. They survive closing the tab, restarting, and clearing <i>cached images and files</i>.</p>
-      <p class="muted">They are erased if you clear <i>cookies and other site data</i>, and they won't appear in a private window or a different browser. That's what the backups below are for.</p>
-    </div></section>
-    <div class="dgrid">
-      <section class="card"><div class="card-head"><h2>Automatic backup file</h2>${pill}</div><div class="card-body prose">${body}</div></section>
-      <section class="card"><div class="card-head"><h2>Manual backup</h2></div><div class="card-body prose">
-        <p class="muted">Save a copy whenever you like, or move your data to another browser or computer.</p>
-        <div class="row-actions">
-          <button class="btn" data-action="export-json">${icon('download',14)} Export backup (.json)</button>
-          <button class="btn" data-action="import-json">${icon('upload',14)} Restore from backup…</button>
-          <button class="btn" data-action="export-csv-all">${icon('download',14)} Export all time (.csv for Excel)</button>
+    <div class="view-head"><div><h1>Settings</h1>${DATAFILE ? '' : '<p>Everything stays on this device. Nothing is sent anywhere.</p>'}</div></div>
+    ${DATAFILE ? '' : `<section class="card"><div class="card-head"><h2>Where your data is stored</h2></div><div class="card-body prose">
+      ${DESK ? `<p>Projects, templates and time entries are saved by <b>the Time Tracker app</b> on this device.</p>
+      <p class="muted">To keep a copy you can move to another device, use the backups below.</p>`
+      : `<p>Projects, templates and time entries are saved in <b>this browser's local storage</b> on this device. They survive closing the tab, restarting, and clearing <i>cached images and files</i>.</p>
+      <p class="muted">They are erased if you clear <i>cookies and other site data</i>, and they won't appear in a private window or a different browser. That's what the backups below are for.</p>`}
+    </div></section>`}
+    ${DATAFILE ? `${startupCard}<section class="card data-card"><div class="card-head"><span class="ch-title"><h2>Data</h2><span class="info" tabindex="0" role="button" aria-label="About your data">${icon('info', 15)}<span class="info-pop" role="tooltip"><span class="ip-p">Projects, templates and time entries are saved here automatically.</span><span class="ip-p">Everything stays on this device. Nothing is sent anywhere.</span></span></span></span>${(() => { const on = dataConnected(); return `<span class="status conn ${on ? 'ok' : 'bad'}${Date.now() - connOpenAt < 1500 ? '' : ' min'}"><span class="dot"></span><span class="lbl">${on ? 'Backup connected' : 'Backup isn’t connected'}</span></span>`; })()}</div><div class="card-body prose">
+        <div class="path-box"><button class="icon-btn" data-action="data-show" title="Show in folder">${icon('folder',17)}</button><span class="path">${pathHtml(DATAFILE.path || 'Documents\\Time Tracker\\time-tracker-data.json')}</span></div>
+        ${DATAFILE.aside ? `<p class="hint">The previous file couldn’t be read, so it was kept next to it as <b>${esc(fileBase(DATAFILE.aside))}</b>.</p>` : ''}
+        ${DATAPICK ? `<div class="row-actions"><button class="btn" data-action="data-location">${icon('file',14)}<span class="bl">Choose backup location</span></button></div>` : ''}
+        <div class="sub-head"><span class="ch-title"><h3>Export &amp; import</h3>${importInfo}</span>${lastExp}</div>
+        <p class="muted">Save a copy whenever you like, or bring in data from a backup.</p>
+        <div class="row-actions snug">
+          <button class="btn" data-action="import-json">${icon('upload',14)}<span class="bl">Import from backup</span></button>
+          <button class="btn" data-action="export-json">${icon('download',14)}<span class="bl">Export backup (.json)</span></button>
+          <button class="btn" data-action="export-csv-all">${icon('download',14)}<span class="bl">Export all time (.csv for Excel)</span></button>
         </div>
-        <p class="hint">${meta.lastExportAt ? `Last exported ${fmtRelative(meta.lastExportAt)}.` : 'Never exported.'} Restoring replaces everything currently in the tracker.</p>
+      </div></section>`
+    : `<div class="dgrid">
+      <section class="card"><div class="card-head"><h2>Automatic backup</h2>${pill}</div><div class="card-body prose">${body}</div></section>
+      <section class="card"><div class="card-head"><span class="ch-title"><h2>Export &amp; import</h2>${importInfo}</span>${lastExp}</div><div class="card-body prose">
+        <p class="muted">Save a copy whenever you like, or bring in data from a backup or another device.</p>
+        <div class="row-actions snug">
+          <button class="btn" data-action="import-json">${icon('upload',14)}<span class="bl">Import from backup</span></button>
+          <button class="btn" data-action="export-json">${icon('download',14)}<span class="bl">Export backup (.json)</span></button>
+          <button class="btn" data-action="export-csv-all">${icon('download',14)}<span class="bl">Export all time (.csv for Excel)</span></button>
+        </div>
+        <label class="toggle daily-dl"><input type="checkbox" class="chk" data-action="daily-dl" ${dailyDlOn() ? 'checked' : ''}> Save a copy to Downloads once a day${meta.lastDailyDl ? ` <span class="muted">(last: ${meta.lastDailyDl === dayKeyOf(Date.now()) ? 'today' : esc(meta.lastDailyDl)})</span>` : ''}</label>
+        ${meta.dailyDl === undefined ? `<p class="hint">${backupWorks() ? 'Off while automatic backup is on; it switches on by itself if that stops.' : 'On while automatic backup is off.'}</p>` : ''}
       </div></section>
-    </div>
+    </div>`}
+    ${Object.keys(places.map).length > 1 || SPACE !== 'main' ? `<section class="card"><div class="card-head"><h2>This copy</h2></div><div class="card-body prose">
+      <p>${SPACE === 'main' ? 'This file uses your tracker’s data.' : 'This copy has its own data, separate from your tracker.'} <span class="muted">(${esc(placeName(HERE))})</span></p>
+      <div class="row-actions"><button class="btn" data-action="place-switch">${SPACE === 'main' ? 'Give this copy its own data' : 'Use my tracker’s data instead'}</button></div>
+      <p class="hint">Switching deletes nothing: each set of data stays as it is and comes back if you switch again.</p>
+    </div></section>` : ''}
     <section class="card danger-row"><div class="card-head">
-      <div><h2>Delete everything</h2><p class="muted">Removes all projects, templates and time entries from this browser. Backup files on your computer are not touched.</p></div>
-      <button class="btn danger-outline" data-action="wipe">${icon('trash',14)} Delete all data</button>
+      <div><h2>Delete everything</h2><p class="muted">${DATAFILE ? 'Removes all projects, templates and time entries from the app and its data file. Exported backups are not touched.' : `Removes all projects, templates and time entries from ${HOME_NAME}. Backup files on your device are not touched.`}</p></div>
+      <button class="btn danger-outline" data-action="wipe">${icon('trash',14)}<span class="bl">Delete all data</span></button>
     </div></section>
-    <p class="footnote">Version ${APP_VERSION}${canUpdate() ? (() => { const x = updStatus(); return ` · <span class="upd-st" data-h="${esc(x.html)}"${x.tip ? ` data-tip="${esc(x.tip)}"` : ''}>${x.html}</span> · <button class="linkbtn" data-action="update-check">Check for updates</button>`; })() : ''} · ${S.projects.length} projects · ${S.templates.length} templates · ${S.entries.length} time entries · ${sizeKB} KB</p>`;
+    <p class="footnote"><span class="ver">Version ${APP_VERSION}</span>${canUpdate() ? (() => { const x = updStatus(); return ` · <span class="upd-st" data-h="${esc(x.html)}"${x.tip ? ` data-tip="${esc(x.tip)}"` : ''}>${x.html}</span> · <button class="linkbtn" data-action="update-check">Check for updates</button>`; })() : ''} · ${S.projects.length} projects · ${S.templates.length} templates · ${S.entries.length} time entries · ${sizeKB} KB</p>`;
+  const conn = $('#main .conn');
+  if (conn) {
+    conn.style.setProperty('--pw', conn.getBoundingClientRect().width + 'px');   // (the pill's full width: where the dot goes when it folds)
+    if (!conn.classList.contains('min')) { clearTimeout(connTimer); connTimer = setTimeout(() => conn.classList.add('min'), Math.max(0, 1500 - (Date.now() - connOpenAt))); }
+  }
 }
 
 /* =========================================================
@@ -2239,7 +2652,7 @@ function dlgEditTotal(p, tid){
     <div class="field"><label for="f-total">Total</label><input class="input" id="f-total" name="total" value="${start}" autocomplete="off" placeholder="e.g. 2:30, 2h 30m or 2.5">
       <div class="hint" id="f-hint">Type the new total. It replaces the current one.</div></div>
     <div class="dlg-actions" style="justify-content:space-between">
-      <button class="btn danger-outline" type="submit" value="clear">${icon('trash', 14)} Delete all time</button>
+      <button class="btn danger-outline" type="submit" value="clear">${icon('trash', 14)}<span class="bl">Delete all time</span></button>
       <span style="display:flex;gap:8px"><button type="button" class="btn ghost" data-close>Cancel</button><button class="btn primary" type="submit" value="save">Save</button></span>
     </div></form>`,
     (fd, form, submitter) => {
@@ -3658,7 +4071,7 @@ function checkForgottenTimer(leftAt, reason){
   const asleep = reason === 'asleep';
   const at = ts => (startOfDay(ts) === startOfDay(backAt) ? '' : fmtDate(ts, {weekday:'short', month:'short', day:'numeric'}) + ', ') + fmtTime(ts);
   const awayTxt = fmtHM(away), beforeTxt = fmtHM(leftAt - r.start);
-  const leftTxt = asleep ? 'Computer went to sleep' : 'Tracker was closed';
+  const leftTxt = asleep ? 'Device went to sleep' : 'Tracker was closed';
   const backTxt = asleep ? 'Woke up' : 'Reopened';
 
   const choices = {
@@ -3672,7 +4085,7 @@ function checkForgottenTimer(leftAt, reason){
   // Most likely choice first: after sleep you're usually still working; after closing you usually forgot to stop.
   const order = asleep ? ['skip', 'count', 'stop'] : ['stop', 'skip', 'count'];
 
-  openDialog(`<form class="away-dlg"><h2>${asleep ? 'Your computer was asleep' : 'The tracker was closed'} while a timer was running</h2>
+  openDialog(`<form class="away-dlg"><h2>${asleep ? 'Your device was asleep' : 'The tracker was closed'} while a timer was running</h2>
     <p class="dlg-msg"><span class="dot" style="background:${p.color}"></span> <b>${esc(t ? t.name : 'No specific task')}</b> · ${esc(p.name)}</p>
     <div class="away-tl">
       <span class="k">Timer started</span><span class="v">${at(r.start)}</span><span class="n"></span>
@@ -3983,7 +4396,7 @@ function renderMiniCtl(){
       <button data-action="mini-open">${icon('pip')} ${open ? 'Close' : 'Open'} floating timer</button>
       <label class="menu-check"><input type="checkbox" class="chk" data-action="mini-auto" ${meta.miniAuto ? 'checked' : ''}> Open it automatically when I press Play</label>
       <button data-action="mini-reset">${icon('reset')} Reset its position</button>
-      <p class="menu-note">${mini.pip ? 'It reopens where you last left it. If it ends up off-screen (e.g. after unplugging a monitor), use Reset.' : 'In this browser it opens as a small separate window (Chrome and Edge can keep it above other apps). If it ends up off-screen, use Reset.'}</p>
+      <p class="menu-note">${mini.pip ? 'It reopens where you last left it. If it ends up off-screen (e.g. after unplugging a monitor), use Reset.' : (DESK ? 'It stays on top of your other windows. If it ends up off-screen, use Reset.' : 'In this browser it opens as a small separate window (Chrome and Edge can keep it above other apps). If it ends up off-screen, use Reset.')}</p>
     </div></details>`;
 }
 
@@ -4035,12 +4448,32 @@ function download(name, text, type){
   const blob = new Blob([text], { type });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob); a.download = name;
+  a.addEventListener('click', e => e.stopPropagation());   // (the tracker's own click handling would see it as a click elsewhere: closing menus, clearing a selection)
   document.body.appendChild(a); a.click();
   setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
 }
+/* ---------- daily copy to Downloads ----------
+   A safety net that needs no file permission (some Chrome setups refuse the backup file): once a day, the first time
+   the tracker is open that day, it downloads a dated backup like the Export button does. It's on whenever the
+   automatic backup file isn't working, and can be switched on for good or off on the Backup page. */
+// (a backup file waiting for a click to resume counts as working, unless asking has been switched off)
+const backupWorks = () => backup.status === 'ok' || (backup.status === 'paused' && !(meta.autoAskOffUntil > Date.now()));
+const dailyDlOn = () => !DATAFILE && (meta.dailyDl === true || (meta.dailyDl !== false && !backupWorks()));
+function maybeDailyBackup(){
+  const today = dayKeyOf(Date.now());
+  if (!backup.ready || !dailyDlOn() || meta.lastDailyDl === today || isEmpty() || document.hidden) return;
+  const name = `time-tracker-backup-${today}.json`;
+  download(name, JSON.stringify(exportPayload(), null, 2), 'application/json');
+  meta.lastDailyDl = metaChosen.lastDailyDl = today;
+  meta.lastExportAt = metaChosen.lastExportAt = Date.now(); saveMeta();
+  toast(`Today’s backup is in your Downloads folder: <b>${esc(name)}</b>`);
+  if (ui.view === 'data') render();   // (nothing else on screen changes, so open menus etc. stay as they are)
+}
 function exportJSON(){
   download(`time-tracker-backup-${dayKeyOf(Date.now())}.json`, JSON.stringify(exportPayload(), null, 2), 'application/json');
-  meta.lastExportAt = metaChosen.lastExportAt = Date.now(); saveMeta(); render();
+  meta.lastExportAt = metaChosen.lastExportAt = Date.now();
+  meta.lastDailyDl = metaChosen.lastDailyDl = dayKeyOf(Date.now());   // (an export counts as today's copy)
+  saveMeta(); render();
   toast('Backup downloaded. Keep it somewhere safe.');
 }
 const csvCell = v => { v = String(v ?? ''); return /[",\r\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
@@ -4056,58 +4489,100 @@ function exportCSV(entries, name){
 }
 const safeName = s => String(s).replace(/[^\w\- ]+/g, '').trim().replace(/\s+/g, '-').slice(0, 60) || 'project';
 
-async function importText(text){
-  let d;
-  try { d = normalize(JSON.parse(text)); }
-  catch (e) { toast(esc(e instanceof SyntaxError ? 'That file isn’t valid JSON.' : e.message), {error:true}); return false; }
-  if (!isEmpty()) {
-    const ok = await confirmDialog({ title:'Replace current data?', ok:'Replace everything',
-      message:`The backup has <b>${d.projects.length}</b> project(s), <b>${d.templates.length}</b> template(s) and <b>${d.entries.length}</b> time entries. Restoring replaces everything currently in the tracker (${S.projects.length} projects, ${S.entries.length} entries).` });
-    if (!ok) return false;
-  }
-  S = d; ui.projectId = null; ui.view = 'projects';
+/* ---------- import: brings in what's missing, never changes or removes anything ---------- */
+async function importText(text, name){
+  let d, savedAt = null;
+  try { const raw = JSON.parse(text); d = normalize(raw); savedAt = Date.parse(raw && raw.exportedAt) || null; }
+  catch (e) { console.warn('[import] not a backup:', name, e.message); toast(e instanceof SyntaxError ? 'That file isn’t a Time Tracker backup.' : esc(e.message), {error:true}); return false; }
+  const add = mergeData(S, d, savedAt);
+  console.info('[import]', name, 'new:', JSON.stringify(add.n));
+  if (!add.total) { toast(`Everything in ${name ? `<b>${esc(name)}</b>` : 'this backup'} is already in the tracker`); return false; }
+  const ok = await confirmAdd({ title:'Import from backup?', name, savedAt, add, ok:'Add to tracker',
+    after:'They’re added to what you have. Nothing in the tracker is changed or removed.' });
+  if (!ok) return false;
+  S = add.data; ui.projectId = null; ui.view = 'projects';
   save(); render();
-  toast(`Restored ${d.projects.length} project(s) and ${d.entries.length} time entries`);
+  toast(`Added ${addSummary(add.n)}`);
   return true;
 }
-async function restoreFromFile(){
-  if (window.showOpenFilePicker) {
-    let h;
-    try { [h] = await showPicker('showOpenFilePicker', { multiple:false }); }
-    catch (e) { if (e.name !== 'AbortError') toast(esc(e.message), {error:true}); return; }
-    rememberPick(h);
-    const ok = await importText(await (await h.getFile()).text());
-    if (ok && backup.supported && backup.status !== 'ok') {
-      const keep = await confirmDialog({ title:'Keep backing up to this file?', ok:'Yes, auto-backup here', danger:false,
-        message:`From now on, every change will be saved to <b>${esc(h.name)}</b> automatically.` });
-      if (keep) {
-        try { if ((await h.requestPermission({ mode:'readwrite' })) === 'granted') await useHandle(h); }
-        catch (e) { toast(esc(e.message), {error:true}); }
-      }
-    }
-  } else $('#fileInput').click();
-}
+function restoreFromFile(){ $('#fileInput').click(); }
 $('#fileInput').addEventListener('change', async ev => {
   const f = ev.target.files[0]; ev.target.value = '';
-  if (f) importText(await f.text());
+  console.info('[import] picked', f ? `${f.name} (${f.size} bytes)` : 'nothing');
+  if (f) importText(await f.text(), f.name).catch(e => { console.error('[import] failed', e); toast(`Couldn’t import ${esc(f.name)}: ${esc(e.message)}`, { error:true }); });
 });
+// Drop a backup file anywhere on the tracker to import it
+document.addEventListener('dragover', e => {
+  if (e.dataTransfer && [...e.dataTransfer.types].includes('Files')) { e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; }
+});
+document.addEventListener('drop', e => {
+  const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+  if (!f) return;
+  e.preventDefault();
+  if (dlg.open) return;
+  if (/\.html?$/i.test(f.name)) { loadVersionFile(f); return; }
+  if (!/\.json$/i.test(f.name)) { toast('To import, drop a Time Tracker backup file (.json)'); return; }
+  f.text().then(t => importText(t, f.name));
+});
+// Drop a newer time-tracker.html onto the tracker to run that version here (to check it before publishing it)
+async function loadVersionFile(f){
+  const html = await f.text();
+  const v = (html.match(/const APP_VERSION = '([\d.]+)'/) || [])[1];
+  if (!v || !html.includes('id="tt-app"') || !window.__ttBoot) { toast(`<b>${esc(f.name)}</b> isn’t a Time Tracker file`, { error:true }); return; }
+  if (verCmp(v, APP_VERSION) <= 0) { toast(`<b>${esc(f.name)}</b> is version ${esc(v)}. This is already ${APP_VERSION}.`); return; }
+  const c = updRead();
+  try { localStorage.setItem(UPD_KEY, JSON.stringify({ v, html, at:Date.now(), bad:c.bad === v ? '' : (c.bad || '') })); }
+  catch (e) { toast(`Couldn’t load version ${esc(v)}: ${esc(e.message)}`, { error:true }); return; }
+  console.info('[update] loaded version', v, 'from', f.name);
+  applyUpdate();
+}
+const nWord = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+function addSummary(n){
+  const parts = [n.projects && nWord(n.projects, 'project', 'projects'), (n.tasks + n.tplTasks) && nWord(n.tasks + n.tplTasks, 'task', 'tasks'),
+    n.entries && nWord(n.entries, 'time entry', 'time entries'), n.templates && nWord(n.templates, 'template', 'templates')].filter(Boolean);
+  return parts.length > 1 ? parts.slice(0, -1).join(', ') + ' and ' + parts[parts.length - 1] : parts[0] || 'nothing';
+}
+function confirmAdd({ title, name, savedAt, add, ok, after, lead }){
+  const n = add.n;
+  const row = (k, one, many) => n[k] ? `<div class="add-row"><b>${n[k]}</b> ${n[k] === 1 ? one : many}</div>` : '';
+  const when = savedAt ? ` <span class="muted">(saved ${fmtDate(savedAt, { month:'short', day:'numeric', year:'numeric' })}, ${fmtTime(savedAt)})</span>` : '';
+  return new Promise(res => {
+    openDialog(`<form><h2>${esc(title)}</h2>
+      <p class="dlg-msg">${lead || `${name ? `<b>${esc(name)}</b>${when} has` : 'The backup has'} these that aren’t in the tracker yet:`}</p>
+      <div class="add-rows">${row('projects', 'project', 'projects')}${row('tasks', 'task in a project you already have', 'tasks in projects you already have')}${row('entries', 'time entry', 'time entries')}${row('templates', 'template', 'templates')}${row('tplTasks', 'task in a template you already have', 'tasks in templates you already have')}</div>
+      ${n.stopped ? `<p class="dlg-msg">A timer was still running in the backup. It comes in stopped at <b>${fmtTime(add.stoppedAt)}</b>${savedAt ? ', when the backup was saved' : ''}.</p>` : ''}
+      <p class="dlg-msg">${after}</p>
+      ${actionsHtml(esc(ok), 'primary')}</form>`, () => res(true), null, () => res(false));
+    const b = dlg.querySelector('button[type=submit]'); if (b) b.focus();
+  });
+}
 
 /* =========================================================
    Automatic backup file (Chrome / Edge, File System Access API)
    ========================================================= */
 const backup = { supported:typeof window.showSaveFilePicker === 'function', handle:null, name:'', status:'off', error:'', lastWrite:0, timer:null, peek:null };
 
+// The backup file is remembered in the browser's IndexedDB. One connection for the whole session, and if the
+// browser doesn't answer within a few seconds we say so instead of waiting forever (that left the buttons doing nothing).
+let idbP = null;
 function idb(){
-  return new Promise((res, rej) => {
-    const r = indexedDB.open('timeTracker', 1);
+  if (idbP) return idbP;
+  idbP = new Promise((res, rej) => {
+    let r;
+    const t = setTimeout(() => rej(new Error('the browser didn’t open its storage for the backup setting')), 4000);
+    try { r = indexedDB.open('timeTracker', 1); } catch (e) { clearTimeout(t); rej(e); return; }
     r.onupgradeneeded = () => r.result.createObjectStore('kv');
-    r.onsuccess = () => res(r.result);
-    r.onerror = () => rej(r.error);
+    r.onsuccess = () => { clearTimeout(t); const db = r.result; db.onversionchange = () => { db.close(); idbP = null; }; db.onclose = () => { idbP = null; }; res(db); };
+    r.onerror = () => { clearTimeout(t); rej(r.error || new Error('storage error')); };
+    r.onblocked = () => { clearTimeout(t); rej(new Error('another tracker tab is holding the browser storage; close other tracker tabs and try again')); };
   });
+  idbP.catch(() => { idbP = null; });
+  return idbP;
 }
 async function kv(mode, key, val){
   const db = await idb();
   return new Promise((res, rej) => {
+    setTimeout(() => rej(new Error('the browser didn’t answer')), 4000);
     const tx = db.transaction('kv', mode === 'get' ? 'readonly' : 'readwrite');
     const st = tx.objectStore('kv');
     const q = mode === 'get' ? st.get(key) : mode === 'set' ? st.put(val, key) : st.delete(key);
@@ -4117,15 +4592,27 @@ async function kv(mode, key, val){
 }
 async function peekHandle(h){
   try {
-    const d = normalize(JSON.parse(await (await h.getFile()).text()));
-    return d.projects.length || d.entries.length ? { projects:d.projects.length, entries:d.entries.length, data:d } : null;
+    const raw = JSON.parse(await (await h.getFile()).text()), d = normalize(raw);
+    return d.projects.length || d.entries.length ? { projects:d.projects.length, entries:d.entries.length, data:d, savedAt:Date.parse(raw.exportedAt) || null } : null;
   } catch { return null; }
 }
+// What's in a file picked in a file window: null for a new or empty file
+async function readBackupData(h){
+  let text = '';
+  try { text = await fileStep((async () => (await h.getFile()).text())(), 'reading the file'); }
+  catch (e) { if (e.name === 'StepTimeout') throw e; }
+  if (!text.trim()) return null;
+  try { const raw = JSON.parse(text); return { data:normalize(raw), savedAt:Date.parse(raw && raw.exportedAt) || null }; }
+  catch { return { notBackup:true }; }
+}
 async function initBackup(){
+  if (DATAFILE) { backup.status = 'off'; return; }   // (your data file is on disk already; Export makes a copy any time)
   backup.lastWrite = meta.lastBackupWrite || 0;
+  setTimeout(() => { backup.ready = true; maybeDailyBackup(); }, 4000);   // (by then we know whether the backup file works, and the page has settled)
   if (!backup.supported) { backup.status = 'unsupported'; render(); return; }
+  kv('del', 'lastPickedHandle' + SFX).catch(() => {});   // (older versions remembered it; see showPicker2)
   try {
-    const h = await kv('get', 'backupHandle');
+    const h = DESK ? (meta.deskBackup ? deskHandle(meta.deskBackup) : null) : await kv('get', 'backupHandle' + SFX);
     if (h) {
       backup.handle = h; backup.name = h.name;
       const perm = await h.queryPermission({ mode:'readwrite' });
@@ -4135,12 +4622,19 @@ async function initBackup(){
         scheduleBackup(0);
       }
     }
-  } catch (e) { console.warn('Backup init failed', e); }
+  } catch (e) {
+    console.warn('Backup init failed', e);
+    if (meta.lastBackupWrite) { backup.status = 'error'; backup.error = `couldn’t read which backup file to use (${e.message}). Choose it again on the Backup page.`; }
+  }
   render();
 }
 async function useHandle(h){
   backup.handle = h; backup.name = h.name; backup.status = 'ok'; backup.error = '';
-  try { await kv('set', 'backupHandle', h); } catch (e) { console.warn(e); }
+  if (meta.autoAskOffUntil) { meta.autoAskOffUntil = metaChosen.autoAskOffUntil = 0; saveMeta(); }
+  render();   // show it as on straight away; a problem while saving below turns it into an error with the reason
+  if (h.ttPath) { meta.deskBackup = metaChosen.deskBackup = h.ttPath; saveMeta(); }
+  else try { await kv('set', 'backupHandle' + SFX, h); }
+  catch (e) { console.warn(e); toast(`Backing up to ${esc(h.name)}, but the browser couldn’t remember it for next time (${esc(e.message)}).`, { error:true }); }
   backup.peek = isEmpty() ? await peekHandle(h) : null;
   await writeBackup(true); // just picked: the file may not exist on disk yet
   render();
@@ -4148,95 +4642,158 @@ async function useHandle(h){
 /* File pickers open in the folder you last used for backups:
    1) next to the current (or last chosen) backup file, which is remembered in IndexedDB, and
    2) the picker "id", which makes Chrome/Edge remember the last folder used with these pickers. */
-const PICKER_ID = 'time-tracker-backup';
+const PICKER_ID = 'time-tracker-backup' + (SPACE === 'main' ? '' : '-' + SPACE);   // (a copy remembers its own folder)
 const BACKUP_TYPES = [{ description:'Time Tracker backup', accept:{ 'application/json':['.json'] } }];
-async function pickerStartHandle(){
+function pickerStartHandle(){
   if (backup.status === 'missing') return null;   // that file is gone; fall back to the remembered folder
-  if (backup.handle) return backup.handle;
-  try { return (await kv('get', 'lastPickedHandle')) || null; } catch { return null; }
+  return backup.handle || backup.lastPick || null;   // (lastPick is read from storage when the tracker starts)
 }
 async function showPicker(kind, opts){
-  const base = { id:PICKER_ID, types:BACKUP_TYPES, ...opts };
-  const start = await pickerStartHandle();
-  if (!start) return window[kind](base);
-  try { return await window[kind]({ ...base, startIn:start }); }
+  const t0 = performance.now();
+  try { return await showPicker2(kind, opts); }
   catch (e) {
-    if (e.name === 'AbortError') throw e;
-    return window[kind](base);                    // e.g. that file was moved: open the remembered folder instead
+    // "cancelled" before anyone could have seen the window: Chrome didn't show it at all. That happens when file
+    // editing is blocked for files on this computer (for example after choosing "Don't allow" on Chrome's question once)
+    if (!DESK && e && e.name === 'AbortError' && performance.now() - t0 < 400) { const b = new Error('Chrome didn’t open the window'); b.name = 'PickerBlocked'; throw b; }
+    throw e;
   }
 }
-function rememberPick(h){ kv('set', 'lastPickedHandle', h).catch(() => {}); }
+async function showPicker2(kind, opts){
+  // (no "startIn" with a remembered file any more: if that file's folder changed or went away, e.g. a demo copy's,
+  //  Chrome's window could fail. The picker id still makes Chrome reopen the folder you used last.)
+  return window[kind]({ id:PICKER_ID, types:BACKUP_TYPES, ...opts });
+}
+// what to do when Chrome won't show the file window
+function pickerBlockedHelp(){
+  openDialog(`<form><h2>Chrome is refusing to open the file window</h2>
+    <p class="dlg-msg">Chrome does this by itself, for about a week, after its question <i>“Allow this page to edit files?”</i> has been closed or refused a few times. A copy of the tracker opened at the same time can cause that, because it asks about the same backup file. This block isn’t shown in Chrome’s <b>File editing</b> list.</p>
+    <ol class="dlg-steps">
+      <li>Click the icon at the left end of the address bar (it says <b>File</b>). If <b>File editing</b> shows as blocked, or there’s a <b>Reset permissions</b> button, reset it.</li>
+      <li>Close every Chrome window, open Chrome again, and choose the backup file again. When Chrome asks, choose <b>Allow</b>.</li>
+      <li>If Chrome still refuses, the block lifts by itself within about a week. Until then, use <b>Export backup (.json)</b> on this page now and then. Your data in the tracker is safe either way.</li>
+    </ol>
+    <div class="dlg-actions"><button type="submit" class="btn primary" autofocus>OK</button></div></form>`, () => {});
+}
 
-async function connectBackup(){
+function rememberPick(h){ backup.lastPick = h; }
+
+// file steps that Chrome never finishes would leave the page waiting silently: give each one a time limit and a name
+const fileStep = (pr, what, ms = 10000) => Promise.race([pr, new Promise((_, rej) => setTimeout(() => rej(Object.assign(new Error(`${DESK ? 'The app' : 'Chrome'} didn’t finish ${what}`), { name:'StepTimeout' })), ms))]);
+// what Chrome said when it didn't hand over a file (shown so a refusal can be told apart from Cancel)
+function pickerFailed(e, t0){
+  console.info('[backup] picker', e && e.name, e && e.message, Math.round(performance.now() - t0) + 'ms');
+  if (e.name === 'PickerBlocked') { pickerBlockedHelp(); return; }
+  if (DESK) { if (e.name !== 'AbortError') toast(`No backup file was set up: ${esc(e.message || e.name)}`, { error:true }); return; }   // (Cancel in the app's Save window: nothing to say)
+  toast(`No backup file was set up. Chrome said: <b>${esc(e.name)}</b>${e.message ? ' – ' + esc(e.message) : ''}`, { error:e.name !== 'AbortError' });
+}
+async function connectBackup(picked, pre){
   if (!backup.supported) { toast('Automatic backup needs Chrome or Edge. Use Export backup instead.'); return; }
-  let h;
-  try {
-    h = await showPicker('showSaveFilePicker', { suggestedName:backup.name || 'time-tracker-backup.json' });
-  } catch (e) { if (e.name !== 'AbortError') toast(esc(e.message), {error:true}); return; }
+  let h = picked;
+  const t0 = performance.now();
+  if (!h) {
+    try { h = await showPicker('showSaveFilePicker', { suggestedName:backup.name || 'time-tracker-backup.json' }); }
+    catch (e) { pickerFailed(e, t0); return; }
+  }
   rememberPick(h);
-  const wasMissing = backup.status === 'missing';
-
-  // Safeguard: if the chosen file holds projects or time entries the tracker doesn't have,
-  // ask before overwriting it.
-  if (!isEmpty()) {
-    let raw = null, fileData = null;
-    try { raw = JSON.parse(await (await h.getFile()).text()); fileData = normalize(raw); } catch {}
-    if (fileData) {
-      const pids = new Set(S.projects.map(p => p.id)), eids = new Set(S.entries.map(e => e.id));
-      const extraP = fileData.projects.filter(p => !pids.has(p.id)).length;
-      const extraE = fileData.entries.filter(e => !eids.has(e.id)).length;
-      if (extraP || extraE) {
-        const choice = await chooseBackupConflict(h.name, fileData, raw && raw.exportedAt, extraP, extraE);
-        if (!choice) return;                       // cancelled: nothing connected, nothing written
-        if (choice !== 'replace') {
-          clearTimeout(backup.timer); backup.status = 'off'; // don't write to the previous file mid-switch
-          S = choice === 'restore' ? fileData : mergeData(S, fileData);
-          ui.projectId = null;
-          save();
-        }
-        await useHandle(h);
-        render();
-        toast(choice === 'merge' ? `Combined. Backing up to ${esc(h.name)}.` : choice === 'restore' ? `Restored from ${esc(h.name)}. Auto-backup is on.` : `Replaced ${esc(h.name)} with your current data.`);
-        return;
-      }
+  console.info('[backup] picked', h.name);
+  toast(`Connecting to ${esc(h.name)}…`);
+  const wasMissing = backup.status === 'missing', wasOn = backup.status === 'ok';
+  let add = pre;
+  if (add === undefined) {   // it may be an existing backup: bring in what's missing before saving over it
+    let found;
+    try { found = await readBackupData(h); }
+    catch (e) { backup.status = 'error'; backup.error = e.message + '. Close other tracker tabs and try again.'; render(); return; }
+    add = found && found.data ? mergeData(S, found.data, found.savedAt) : null;
+    if (add && add.total && !await confirmAdd({ title:'This file already has data', name:h.name, savedAt:found.savedAt, add, ok:'Add and keep saving here',
+        after:'They’re added to the tracker, then every change is saved to this file. Nothing is removed.' })) {
+      toast(wasOn ? 'Nothing changed' : 'Nothing changed: auto-backup is still off'); return;
     }
   }
-  await useHandle(h);
-  if (backup.peek) toast('That file already has a backup. Use “Restore it” above if you want to load it.');
-  else if (backup.status === 'ok') toast(wasMissing ? `Reconnected. Backing up to ${esc(h.name)} again.` : `Auto-backup is on: ${esc(h.name)}`);
-}
-function chooseBackupConflict(name, fileData, exportedAt, extraP, extraE){
-  const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
-  const when = exportedAt && isFinite(Date.parse(exportedAt)) ? ` (saved ${fmtDate(Date.parse(exportedAt), {month:'short', day:'numeric', year:'numeric'})}, ${fmtTime(Date.parse(exportedAt))})` : '';
-  const missing = [extraP ? plural(extraP, 'project') : '', extraE ? plural(extraE, 'time entry').replace('entrys', 'entries') : ''].filter(Boolean).join(' and ');
-  return new Promise(res => {
-    openDialog(`<form><h2>This file already has a backup</h2>
-      <p class="dlg-msg"><b>${esc(name)}</b> has ${plural(fileData.projects.length, 'project')} and ${plural(fileData.entries.length, 'time entry').replace('entrys', 'entries')}${when}.
-      <b>${missing}</b> in it ${extraP + extraE === 1 ? "isn't" : "aren't"} in the tracker right now. Replacing the file would lose ${extraP + extraE === 1 ? 'it' : 'them'}.</p>
-      <div class="dlg-actions stack">
-        <button class="btn primary" type="submit" value="merge">Combine both (nothing is lost)</button>
-        <button class="btn" type="submit" value="restore">Restore from file (replace what's in the tracker)</button>
-        <button class="btn danger-outline" type="submit" value="replace">Replace file with tracker data</button>
-        <button class="btn ghost" type="button" data-close>Cancel</button>
-      </div></form>`,
-      (fd, form, submitter) => res(submitter ? submitter.value : null), null, () => res(null));
-  });
-}
-function mergeData(cur, file){
-  const out = JSON.parse(JSON.stringify(cur));
-  const pmap = new Map(out.projects.map(p => [p.id, p]));
-  for (const fp of file.projects) {
-    const p = pmap.get(fp.id);
-    if (!p) { out.projects.push(fp); pmap.set(fp.id, fp); continue; }
-    const tids = new Set(p.tasks.map(t => t.id));
-    for (const t of fp.tasks) if (!tids.has(t.id)) p.tasks.push(t);
+  if (add && add.total) {
+    clearTimeout(backup.timer); backup.status = 'off';   // (don't write to the previous file mid-switch)
+    S = add.data; ui.projectId = null; save();
   }
-  const tkey = t => (t.name + '|' + t.tasks.join('|')).trim().toLowerCase();
-  const tids = new Set(out.templates.map(t => t.id)), tkeys = new Set(out.templates.map(tkey));
-  for (const t of file.templates) if (!tids.has(t.id) && !tkeys.has(tkey(t))) out.templates.push(t);
-  const eids = new Set(out.entries.map(e => e.id));
-  for (const e of file.entries) if (!eids.has(e.id)) out.entries.push(e);
-  return normalize(out);
+  await useHandle(h);
+  render();
+  if (backup.status === 'ok') toast(add && add.total ? `Added ${addSummary(add.n)}. Backing up to ${esc(h.name)}.` : wasMissing ? `Found it. Backing up to ${esc(h.name)} again.` : `Auto-backup is on: ${esc(h.name)}`);
+}
+async function connectExisting(){
+  if (!backup.supported) { toast('Automatic backup needs Chrome or Edge. Use Export backup instead.'); return; }
+  const t0 = performance.now();
+  let h;
+  try { [h] = await showPicker('showOpenFilePicker', { multiple:false }); }
+  catch (e) { pickerFailed(e, t0); return; }
+  console.info('[backup] opened', h.name);
+  const found = await readBackupData(h);
+  if (found && found.notBackup) { toast(`<b>${esc(h.name)}</b> isn’t a Time Tracker backup. Choose your backup file, or start a new one.`, { error:true }); return; }
+  const add = found ? mergeData(S, found.data, found.savedAt) : null;
+  const ask = DESK ? '' : ' Chrome will ask once whether the tracker may save to it: choose <b>Allow</b> (or <b>Edit file</b>).';
+  if (add && add.total) {
+    if (!await confirmAdd({ title:'Add what’s in this backup?', name:h.name, savedAt:found.savedAt, add, ok:'Add and keep saving here',
+      after:`They’re added to the tracker, then every change is saved to this file.${ask} Nothing is removed.` })) return;
+  } else if (!DESK) {   // asking Chrome for permission needs a fresh click, so confirm first
+    if (!await confirmDialog({ title:'Back up to this file?', ok:'Yes, back up here', danger:false,
+      message:`${found ? 'Everything in it is already in the tracker. ' : ''}Every change will be saved to <b>${esc(h.name)}</b>.${ask}` })) return;
+  }
+  if (!DESK) {
+    let perm = 'denied';
+    try { perm = await h.requestPermission({ mode:'readwrite' }); } catch (e) { toast(`Chrome didn’t allow saving to ${esc(h.name)}: ${esc(e.name)} – ${esc(e.message)}`, { error:true }); return; }
+    if (perm !== 'granted') { toast(`Chrome didn’t allow saving to ${esc(h.name)} (${esc(perm)}).`, { error:true }); return; }
+  }
+  await connectBackup(h, add);
+}
+function mergeData(cur, file, savedAt, keepRunning){
+  const out = JSON.parse(JSON.stringify(cur));
+  const n = { projects:0, tasks:0, entries:0, templates:0, tplTasks:0, stopped:0 };
+  const key = s => String(s || '').trim().toLowerCase();
+  const taskIds = new Set(out.projects.flatMap(p => p.tasks.map(t => t.id)));
+  const pById = new Map(out.projects.map(p => [p.id, p])), pByName = new Map();
+  for (const p of out.projects) if (!pByName.has(key(p.name))) pByName.set(key(p.name), p);
+  const pMap = new Map(), tMap = new Map();   // backup's project id → tracker project; backup's "project|task" → tracker task id
+  for (const fp of file.projects) {
+    let p = pById.get(fp.id) || pByName.get(key(fp.name)), isNew = false;
+    if (!p) {
+      p = { ...fp, tasks:[] }; isNew = true;
+      out.projects.push(p); pById.set(p.id, p); pByName.set(key(p.name), p); n.projects++;
+    }
+    pMap.set(fp.id, p);
+    const tById = new Map(p.tasks.map(t => [t.id, t])), tByName = new Map();
+    for (const t of p.tasks) if (!tByName.has(key(t.name))) tByName.set(key(t.name), t);
+    for (const ft of fp.tasks) {
+      let t = tById.get(ft.id) || tByName.get(key(ft.name));
+      if (!t) {
+        t = { ...ft }; if (taskIds.has(t.id)) t.id = uid();
+        p.tasks.push(t); taskIds.add(t.id); tById.set(t.id, t); tByName.set(key(t.name), t);
+        if (!isNew) n.tasks++;
+      }
+      tMap.set(fp.id + '|' + ft.id, t.id);
+    }
+  }
+  // time entries: skip ones already here (same entry, or the same task with the same start and end)
+  const sig = e => `${e.projectId}|${e.taskId || ''}|${Math.round(e.start / 1000)}|${e.end == null ? '-' : Math.round(e.end / 1000)}`;
+  const eIds = new Set(out.entries.map(e => e.id)), eSigs = new Set(out.entries.map(sig));
+  let stoppedAt = null;
+  for (const fe of file.entries) {
+    if (eIds.has(fe.id)) continue;
+    const p = pMap.get(fe.projectId); if (!p) continue;
+    const e = { ...fe, projectId:p.id, taskId:fe.taskId ? (tMap.get(fe.projectId + '|' + fe.taskId) || null) : null };
+    if (e.end == null && !(keepRunning && !out.entries.some(x => x.end == null))) {   // a timer still running in the backup comes in stopped: when the backup was saved
+      e.end = Math.max(e.start, Math.min(savedAt || Date.now(), Date.now())); stoppedAt = e.end; n.stopped++;
+    }
+    if (eSigs.has(sig(e))) continue;
+    out.entries.push(e); eIds.add(e.id); eSigs.add(sig(e)); n.entries++;
+  }
+  // templates: same name = same template; missing tasks are added to it
+  const tplIds = new Set(out.templates.map(t => t.id));
+  for (const ft of file.templates) {
+    const t = out.templates.find(x => x.id === ft.id) || out.templates.find(x => key(x.name) === key(ft.name));
+    if (!t) { out.templates.push({ ...ft, id:tplIds.has(ft.id) ? uid() : ft.id, tasks:[...ft.tasks] }); tplIds.add(ft.id); n.templates++; continue; }
+    if (isSampleTpl(t) && !isSampleTpl(ft)) { t.tasks = [...ft.tasks]; t.name = ft.name; n.templates++; continue; }   // (the untouched example: yours replaces it)
+    const have = new Set(t.tasks.map(key));
+    for (const x of ft.tasks) if (!have.has(key(x))) { t.tasks.push(x); have.add(key(x)); n.tplTasks++; }
+  }
+  const total = n.projects + n.tasks + n.entries + n.templates + n.tplTasks;
+  return { data:total ? normalize(out) : cur, n, total, stoppedAt };
 }
 async function resumeBackup(){
   if (!backup.handle) return;
@@ -4247,7 +4804,8 @@ async function resumeBackup(){
   render();
 }
 async function disconnectBackup(){
-  try { await kv('del', 'backupHandle'); } catch {}
+  if (meta.deskBackup) { meta.deskBackup = metaChosen.deskBackup = ''; saveMeta(); }
+  try { await kv('del', 'backupHandle' + SFX); } catch {}
   Object.assign(backup, { handle:null, name:'', status:'off', error:'', peek:null });
   render(); toast('Auto-backup turned off');
 }
@@ -4263,12 +4821,13 @@ async function writeBackup(fresh){
   try {
     // Make sure the file is still where we left it. If it was moved, renamed or deleted,
     // stop instead of quietly writing a new copy at the old location.
-    if (fresh !== true) await backup.handle.getFile();
-    const w = await backup.handle.createWritable();
-    await w.write(JSON.stringify(exportPayload(), null, 2));
-    await w.close();
+    if (fresh !== true) await fileStep(backup.handle.getFile(), 'checking the backup file');
+    const w = await fileStep(backup.handle.createWritable(), 'opening the backup file for saving');
+    await fileStep(w.write(JSON.stringify(exportPayload(), null, 2)), 'saving to the backup file');
+    await fileStep(w.close(), 'finishing the save');
     backup.lastWrite = Date.now(); meta.lastBackupWrite = metaChosen.lastBackupWrite = backup.lastWrite; saveMeta();
   } catch (e) {
+    console.info('[backup] write', e.name, e.message);
     if (e.name === 'NotFoundError') backup.status = 'missing';
     else if (e.name === 'NotAllowedError' || e.name === 'SecurityError') backup.status = 'paused';
     else { backup.status = 'error'; backup.error = e.message; }
@@ -4422,16 +4981,23 @@ document.addEventListener('click', async e => {
       break;
     }
 
-    case 'backup-connect': connectBackup(); break;
+    case 'backup-connect': connectBackup().catch(e => { toast(`Couldn’t set up the backup file: ${esc(e.message || String(e))}`, { error:true }); render(); }); break;
+    case 'backup-existing': connectExisting().catch(e => { toast(`Couldn’t set up the backup file: ${esc(e.message || String(e))}`, { error:true }); render(); }); break;
     case 'backup-resume': resumeBackup(); break;
     case 'backup-disconnect': disconnectBackup(); break;
     case 'backup-restore-linked': {
       if (!backup.peek) break;
-      S = backup.peek.data; backup.peek = null; ui.projectId = null; ui.view = 'projects';
-      save(); render(); toast('Restored from your backup file');
+      const add = mergeData(S, backup.peek.data, backup.peek.savedAt);
+      backup.peek = null; ui.projectId = null; ui.view = 'projects';
+      if (add.total) { S = add.data; save(); }
+      render(); toast(add.total ? `Added ${addSummary(add.n)} from your backup file` : 'Everything in your backup file is already in the tracker');
       break;
     }
     case 'update-reload': applyUpdate(); break;
+    case 'data-show': if (DATAFILE) DESK.data.show(); break;
+    case 'data-location': if (DATAPICK) chooseDataLocation().catch(e => toast(esc(e.message), { error:true })); break;
+    case 'data-recreate': if (DATAFILE && DATAFILE.state === 'missing') { DATAFILE.state = ''; writeDataFile(); renderBanner(); if (ui.view === 'data') render(); if (!DATAFILE.state && !DATAFILE.error) toast('Your data file is saved there again'); } break;
+    case 'place-switch': switchPlace(); break;
     case 'update-check': checkUpdate(true); break;
     case 'banner-snooze': meta.bannerSnoozeUntil = metaChosen.bannerSnoozeUntil = Date.now() + 3*DAY; saveMeta(); renderBanner(); break;
     case 'export-json': exportJSON(); break;
@@ -4439,7 +5005,8 @@ document.addEventListener('click', async e => {
     case 'export-csv-all': exportCSV(S.entries, `time-tracker-all-${dayKeyOf(Date.now())}.csv`); break;
     case 'wipe': {
       const ok = await confirmDialog({ title:'Delete all data?', ok:'Delete everything',
-        message:`This removes <b>${S.projects.length}</b> projects, <b>${S.templates.length}</b> templates and <b>${S.entries.length}</b> time entries from this browser. Consider exporting a backup first.` });
+        message:`This removes <b>${S.projects.length}</b> projects, <b>${S.templates.length}</b> templates and <b>${S.entries.length}</b> time entries from ${HOME_NAME}. Consider exporting a backup first.`
+          + (SPACE === 'main' && mainCopies().length > 1 ? `<br><br><b>Other copies of this file use the same data</b> (${mainCopies().filter(k => k !== HERE).map(k => esc(placeName(k))).join(', ')}), so they will be emptied too. To empty only this copy, give it its own data on this page first.` : '') });
       if (ok) withUndo('All data deleted', () => { S = emptyState(); ui.projectId = null; });
       break;
     }
@@ -4459,6 +5026,18 @@ document.addEventListener('change', e => {
       save(); render(); break;
     }
     case 'toggle-show-done': ui.showDone = el.checked; render(); break;
+    case 'startup': {
+      if (!STARTUP) break;
+      const st = STARTUP.set(el.checked) || {};
+      el.checked = !!st.on;
+      toast(st.on ? 'Time Tracker will open on startup' : 'Time Tracker won’t open on startup');
+      break;
+    }
+    case 'daily-dl':
+      meta.dailyDl = metaChosen.dailyDl = el.checked; saveMeta();
+      toast(el.checked ? 'A backup will be saved to Downloads once a day' : 'Daily copy to Downloads is off');
+      render(); if (el.checked) maybeDailyBackup();
+      break;
     case 'mini-auto':
       meta.miniAuto = metaChosen.miniAuto = el.checked; saveMeta();
       toast(el.checked ? 'The floating timer will open whenever you press Play' : 'The floating timer won\u2019t open automatically');
@@ -4931,6 +5510,8 @@ window.addEventListener('beforeunload', e => {
   if (!window.__ttReloading && running()) { e.preventDefault(); e.returnValue = ''; return ''; }
 });
 window.addEventListener('pagehide', () => { meta.lastSeen = Date.now(); saveMeta(); });
+setInterval(maybeDailyBackup, 10 * 60000);                 // (a tracker left open overnight makes the new day's copy)
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') maybeDailyBackup(); });
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'hidden') { meta.lastSeen = Date.now(); saveMeta(); if (backup.status === 'ok') { clearTimeout(backup.timer); writeBackup(); } }
 });
@@ -4943,14 +5524,16 @@ function init(){
   const hadData = load();
   startedEmpty = !hadData;
   if (!hadData && !meta.seeded) {
-    // First run: add the sample template in memory only. Nothing is written until you actually change something.
-    S.templates.push({ id:uid(), name:'Survey project', tasks:['Questionnaire review','Survey programming','QA / testing','Soft launch','Fielding & monitoring','Data cleaning & checks','Data delivery / reporting'] });
+    // First run: add the sample template in memory only. (In the browser nothing is written until you change something;
+    // the app saves its data file straight away below, so its backup is connected from the start.)
+    S.templates.push({ id:uid(), name:SAMPLE_TPL.name, tasks:[...SAMPLE_TPL.tasks] });
     meta.seeded = true;
   }
   const m = meta.ui || {};
   ['view','projectId','showArchived','showDone','range','customFrom','customTo'].forEach(k => { if (m[k] !== undefined) ui[k] = m[k]; });
   if (!['projects','templates','summary','data'].includes(ui.view)) ui.view = 'projects';
   ui.dayKey = dayKeyOf(Date.now());
+  if (DATAFILE && !DATAFILE.mtime && !DATAFILE.state) writeDataFile();
   render();
   checkForgottenTimer(meta.lastSeen, 'closed');
   meta.lastSeen = Date.now(); saveMeta(); lastHeartbeat = lastTick = Date.now();
@@ -4962,6 +5545,7 @@ function init(){
   if (meta.ranVersion && verCmp(APP_VERSION, meta.ranVersion) > 0) toast(`Updated to version ${APP_VERSION}`);
   if (meta.ranVersion !== APP_VERSION) { meta.ranVersion = metaChosen.ranVersion = APP_VERSION; saveMeta(); }
   window.__ttStarted = APP_VERSION;   // tells the starter this version came up fine
+  if (notePlace(hadData)) setTimeout(askPlace, 250);
   initUpdates();
   initBackup();
 }
@@ -4971,12 +5555,16 @@ function init(){
 const autoAsk = { done:false, busy:false };
 async function autoResumeBackup(e){
   if (autoAsk.done || autoAsk.busy || backup.status !== 'paused' || !backup.handle) return;
+  // after Chrome's question was closed or refused, don't keep asking on every visit: Chrome itself stops allowing
+  // the question (and even the file windows) for a while when it's dismissed a few times. Resume stays on the Backup page.
+  if (meta.autoAskOffUntil > Date.now()) return;
   // these open their own file pickers or ask themselves
   if (e && e.target && e.target.closest && e.target.closest('[data-action^="backup-"], [data-action="import-json"]')) return;
   autoAsk.busy = true;
   try {
     const perm = await backup.handle.requestPermission({ mode:'readwrite' });
     autoAsk.done = true;
+    if (perm !== 'granted') { meta.autoAskOffUntil = metaChosen.autoAskOffUntil = Date.now() + 7 * DAY; saveMeta(); }
     if (perm === 'granted' && backup.status === 'paused') {
       backup.status = 'ok';
       if (isEmpty()) backup.peek = await peekHandle(backup.handle);
@@ -4984,7 +5572,8 @@ async function autoResumeBackup(e){
       render();   // quietly: no toast (it could push an Undo message off the screen)
     }
   } catch (err) {
-    // no click to ask from (e.g. the floating timer used it): try again on the next one
+    // no click to ask from (e.g. the floating timer used it): try again on the next one. Anything else: once is enough
+    if (!(err && err.name === 'SecurityError')) { autoAsk.done = true; meta.autoAskOffUntil = metaChosen.autoAskOffUntil = Date.now() + 7 * DAY; saveMeta(); }
   } finally { autoAsk.busy = false; }
 }
 document.addEventListener('click', autoResumeBackup);
